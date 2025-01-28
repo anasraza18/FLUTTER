@@ -19,6 +19,7 @@ class LoginView extends StatelessWidget {
             height: 100,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 color: Colors.green,
