@@ -10,28 +10,34 @@ class LoginView extends StatelessWidget {
         backgroundColor: Colors.orange,
         title: Text("Anas"),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Expanded(
-                child: Row(
-              children: [
-                Container(
-                  child: Text("Dashboard"),
-                  color: Colors.red,
-                  height: 700,
-                  width: 130,
-                ),
-                Container(
-                  child: Text("Dashboard Body"),
-                  color: Colors.blue,
-                  height: 700,
-                  width: 260,
-                ),
-              ],
-            )),
-          ],
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            color: Colors.red,
+            width: 100,
+            height: 100,
+          ),
+          Row(
+            children: [
+              Container(
+                color: Colors.green,
+                width: 100,
+                height: 100,
+              ),
+              Container(
+                color: Colors.purple,
+                width: 100,
+                height: 100,
+              ),
+            ],
+          ),
+          Container(
+            color: Colors.blue,
+            width: 100,
+            height: 100,
+          ),
+        ],
       ),
     );
   }
