@@ -17,11 +17,13 @@ class LoginView extends StatelessWidget {
                 child: Row(
               children: [
                 Container(
+                  child: Text("Dashboard"),
                   color: Colors.red,
                   height: 700,
                   width: 130,
                 ),
                 Container(
+                  child: Text("Dashboard Body"),
                   color: Colors.blue,
                   height: 700,
                   width: 260,
