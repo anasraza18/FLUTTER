@@ -8,9 +8,27 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.orange,
-        title: const Text("Anas"),
+        title: Text("Anas"),
       ),
-      body: const Text("App Body"),
+      body: Column(
+        children: [
+          Container(
+            color: Colors.red,
+            height: 230,
+            width: 390,
+          ),
+          Container(
+            color: Colors.blue,
+            height: 230,
+            width: 390,
+          ),
+          Container(
+            color: Colors.green,
+            height: 230,
+            width: 390,
+          ),
+        ],
+      ),
     );
   }
 }
