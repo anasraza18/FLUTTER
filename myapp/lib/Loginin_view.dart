@@ -10,44 +10,47 @@ class LoginView extends StatelessWidget {
         backgroundColor: Colors.orange,
         title: Text("Anas"),
       ),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                //margin: EdgeInsets.all(10),
-                //padding: EdgeInsets.all(10),
-                color: Colors.red,
-                width: 150,
-                height: 150,
-              ),
-              Container(
-                color: Colors.red,
-                width: 150,
-                height: 150,
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                color: Colors.red,
-                width: 150,
-                height: 150,
-              ),
-              Container(
-                color: Colors.red,
-                width: 150,
-                height: 150,
-              ),
-            ],
-          ),
-        ],
+      body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  //margin: EdgeInsets.all(10),
+                  //padding: EdgeInsets.all(10),
+                  color: Colors.red,
+                  width: 150,
+                  height: 150,
+                ),
+                Container(
+                  color: Colors.red,
+                  width: 150,
+                  height: 150,
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  color: Colors.red,
+                  width: 150,
+                  height: 150,
+                ),
+                Container(
+                  color: Colors.red,
+                  width: 150,
+                  height: 150,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
