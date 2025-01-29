@@ -27,25 +27,6 @@ class LoginView extends StatelessWidget {
                 color: Colors.white.withOpacity(0.6),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: const Stack(
-                children: [
-                  Positioned(
-                    top: 10,
-                    left: 0,
-                    right: 0,
-                    child: Center(
-                      child: Text(
-                        "LOGIN",
-                        style: TextStyle(
-                          fontSize: 48,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
             ),
           ),
         ],
