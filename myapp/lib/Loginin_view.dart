@@ -11,32 +11,41 @@ class LoginView extends StatelessWidget {
         title: Text("Anas"),
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                color: Colors.green,
-                width: 100,
-                height: 100,
+                //margin: EdgeInsets.all(10),
+                //padding: EdgeInsets.all(10),
+                color: Colors.red,
+                width: 150,
+                height: 150,
               ),
               Container(
-                color: Colors.purple,
-                width: 100,
-                height: 100,
+                color: Colors.red,
+                width: 150,
+                height: 150,
               ),
             ],
           ),
-          Container(
-            color: Colors.blue,
-            width: 100,
-            height: 100,
+          SizedBox(
+            height: 50,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                color: Colors.red,
+                width: 150,
+                height: 150,
+              ),
+              Container(
+                color: Colors.red,
+                width: 150,
+                height: 150,
+              ),
+            ],
           ),
         ],
       ),
