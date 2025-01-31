@@ -12,7 +12,7 @@ class LoginView extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/background.jpg"),
+                image: AssetImage("assets/images/bg.webp"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -88,10 +88,7 @@ class LoginView extends StatelessWidget {
                       )),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const SignupView()));
+                        Navigator.push(context, _createSlideRoute());
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.yellow,
@@ -111,4 +108,24 @@ class LoginView extends StatelessWidget {
       ),
     );
   }
+}
+
+Route _createSlideRoute() {
+  return PageRouteBuilder(
+    transitionDuration:
+        const Duration(seconds: 2), // Slow transition (2 seconds)
+    pageBuilder: (context, animation, secondaryAnimation) => const SignupView(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      // Slide Animation (Back to Front)
+      var slideTween = Tween<Offset>(
+        begin: const Offset(1.0, 0.0), // Start from right (off-screen)
+        end: Offset.zero, // End at center (normal position)
+      ).chain(CurveTween(curve: Curves.easeInOut));
+
+      return SlideTransition(
+        position: animation.drive(slideTween),
+        child: child,
+      );
+    },
+  );
 }
