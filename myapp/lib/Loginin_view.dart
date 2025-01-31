@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/Signup_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -84,7 +85,24 @@ class LoginView extends StatelessWidget {
                           fontSize: 18,
                           color: Colors.black,
                         ),
-                      ))
+                      )),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SignupView()));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.yellow,
+                      ),
+                      child: const Text(
+                        "Sign Up",
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.black,
+                        ),
+                      )),
                 ],
               ),
             ),
