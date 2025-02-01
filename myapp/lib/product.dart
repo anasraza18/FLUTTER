@@ -40,37 +40,24 @@ class Product extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/1.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+
+                          // color: Colors.white.withOpacity(0.4),
                         ),
                         height: 150,
                         width: 150,
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
-                        ),
-                        height: 150,
-                        width: 150,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
-                        ),
-                        height: 150,
-                        width: 150,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/2.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          // color: Colors.white.withOpacity(0.4),
                         ),
                         height: 150,
                         width: 150,
@@ -85,36 +72,22 @@ class Product extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/3.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
                         ),
                         height: 150,
                         width: 150,
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
-                        ),
-                        height: 150,
-                        width: 150,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
-                        ),
-                        height: 150,
-                        width: 150,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/5.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
                         ),
                         height: 150,
                         width: 150,
@@ -129,36 +102,22 @@ class Product extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/4.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
                         ),
                         height: 150,
                         width: 150,
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
-                        ),
-                        height: 150,
-                        width: 150,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
-                        ),
-                        height: 150,
-                        width: 150,
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/6.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
                         ),
                         height: 150,
                         width: 150,
@@ -173,14 +132,112 @@ class Product extends StatelessWidget {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/7.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
                         ),
                         height: 150,
                         width: 150,
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/8.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
+                        ),
+                        height: 150,
+                        width: 150,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/9.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
+                        ),
+                        height: 150,
+                        width: 150,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/10.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
+                        ),
+                        height: 150,
+                        width: 150,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/11.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
+                        ),
+                        height: 150,
+                        width: 150,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/12.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
+                        ),
+                        height: 150,
+                        width: 150,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/13.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
+                        ),
+                        height: 150,
+                        width: 150,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/images/14.jpg"),
+                            fit: BoxFit.cover,
+                          ),
+                          //color: Colors.white.withOpacity(0.4),
                         ),
                         height: 150,
                         width: 150,
