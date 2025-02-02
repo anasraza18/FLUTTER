@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/product_Carts/carts.dart';
 
 class Product extends StatelessWidget {
   const Product({super.key});
@@ -34,130 +35,25 @@ class Product extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.6),
               ),
+
+              //My All products
+
               child: Column(
                 children: [
                   Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/1.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 1",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/1.jpg",
+                            name: "Product 1",
+                            price: 220),
                       ),
                       //product 2
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/2.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 2",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/2.jpg",
+                            name: "Product 2",
+                            price: 280),
                       ),
                     ],
                   ),
@@ -165,125 +61,17 @@ class Product extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/3.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 3",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/3.jpg",
+                            name: "Product 3",
+                            price: 880),
                       ),
                       //product 2
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/5.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 4",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/6.jpg",
+                            name: "Product 4",
+                            price: 500),
                       ),
                     ],
                   ),
@@ -291,125 +79,17 @@ class Product extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/4.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 5",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/5.jpg",
+                            name: "Product 5",
+                            price: 440),
                       ),
                       //product 2
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/6.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 6",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/4.jpg",
+                            name: "Product 6",
+                            price: 270),
                       ),
                     ],
                   ),
@@ -417,125 +97,17 @@ class Product extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/7.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 7",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/7.jpg",
+                            name: "Product 7",
+                            price: 220),
                       ),
                       //product 2
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/8.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 8",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/8.jpg",
+                            name: "Product 8",
+                            price: 780),
                       ),
                     ],
                   ),
@@ -543,125 +115,17 @@ class Product extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/9.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 9",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/9.jpg",
+                            name: "Product 9",
+                            price: 520),
                       ),
                       //product 2
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/10.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 10",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/10.jpg",
+                            name: "Product 10",
+                            price: 180),
                       ),
                     ],
                   ),
@@ -669,125 +133,17 @@ class Product extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/11.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 11",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/11.jpg",
+                            name: "Product 11",
+                            price: 820),
                       ),
                       //product 2
                       Expanded(
-                        child: Container(
-                          margin: EdgeInsets.all(8.0),
-                          padding: EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 3,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Image.asset(
-                                "assets/images/12.jpg",
-                                height: 200,
-                                width: 200,
-                                fit: BoxFit.cover,
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Product 12",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "Price",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.yellow,
-                                ),
-                                child: Text(
-                                  "ADD CART",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        child: ProductCarts(
+                            imagepath: "assets/images/12.jpg",
+                            name: "Product 12",
+                            price: 380),
                       ),
                     ],
                   ),
