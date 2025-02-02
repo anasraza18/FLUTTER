@@ -18,6 +18,7 @@ class ProductCarts extends StatelessWidget {
       margin: const EdgeInsets.all(8.0),
       padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
+        color: Colors.pink.withOpacity(0.7),
         border: Border.all(
           color: Colors.green,
           width: 3,
@@ -26,11 +27,15 @@ class ProductCarts extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Image.asset(
-            imagepath ?? "",
-            height: 200,
-            width: 200,
-            fit: BoxFit.cover,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(200.0),
+            //clipBehavior: Clip.antiAlias,
+            child: Image.asset(
+              imagepath ?? "",
+              height: 170,
+              width: 170,
+              fit: BoxFit.cover,
+            ),
           ),
           SizedBox(
             height: 10,

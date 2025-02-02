@@ -33,7 +33,7 @@ class Product extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(10.0),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.6),
+                color: Colors.white.withOpacity(0.2),
               ),
 
               //My All products
