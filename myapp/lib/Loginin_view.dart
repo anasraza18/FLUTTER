@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Signup_view.dart';
+import 'package:myapp/Widgets/slideAction.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -88,7 +89,9 @@ class LoginView extends StatelessWidget {
                       )),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, _createSlideRoute());
+                        slideaction(
+                          func: SignupView(), // LoginView widget
+                        ).navigate(context);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.yellow,
@@ -108,24 +111,4 @@ class LoginView extends StatelessWidget {
       ),
     );
   }
-}
-
-Route _createSlideRoute() {
-  return PageRouteBuilder(
-    transitionDuration:
-        const Duration(seconds: 2), // Slow transition (2 seconds)
-    pageBuilder: (context, animation, secondaryAnimation) => const SignupView(),
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      // Slide Animation (Back to Front)
-      var slideTween = Tween<Offset>(
-        begin: const Offset(1.0, 0.0), // Start from right (off-screen)
-        end: Offset.zero, // End at center (normal position)
-      ).chain(CurveTween(curve: Curves.easeInOut));
-
-      return SlideTransition(
-        position: animation.drive(slideTween),
-        child: child,
-      );
-    },
-  );
 }

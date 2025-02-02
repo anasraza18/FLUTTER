@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/Loginin_view.dart';
 import 'package:myapp/Widgets/carts.dart';
+import 'package:myapp/Widgets/slideAction.dart';
 
 class Product extends StatelessWidget {
   const Product({super.key});
@@ -20,6 +22,20 @@ class Product extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.pink,
+        actions: [
+          IconButton(
+            onPressed: () {
+              slideaction(
+                func: LoginView(), // LoginView widget
+              ).navigate(context);
+            },
+            icon: Icon(
+              Icons.account_circle,
+              color: Colors.yellow,
+              size: 46,
+            ),
+          ),
+        ],
       ),
       //Body
       body: Stack(
