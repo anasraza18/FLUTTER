@@ -9,9 +9,9 @@ class Product extends StatelessWidget {
     return Scaffold(
       //app Bar
       appBar: AppBar(
-        leading: Icon(Icons.icecream, color: Colors.white, size: 30),
+        leading: const Icon(Icons.icecream, color: Colors.white, size: 30),
         title: const Text(
-          "ICE CREAM   POLAR",
+          "ICEcream's Ocean",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 28,
