@@ -18,9 +18,9 @@ class ProductCarts extends StatelessWidget {
       margin: const EdgeInsets.all(8.0),
       padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-        color: Colors.pink.withOpacity(0.7),
+        color: Colors.pink.withOpacity(0.5),
         border: Border.all(
-          color: Colors.green,
+          color: Colors.yellow,
           width: 3,
         ),
         borderRadius: BorderRadius.circular(8.0),
@@ -32,7 +32,7 @@ class ProductCarts extends StatelessWidget {
             //clipBehavior: Clip.antiAlias,
             child: Image.asset(
               imagepath ?? "",
-              height: 170,
+              height: 140,
               width: 170,
               fit: BoxFit.cover,
             ),
@@ -41,7 +41,7 @@ class ProductCarts extends StatelessWidget {
             height: 10,
           ),
           Text(
-            name ?? '',
+            "${name ?? ''}",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -51,7 +51,7 @@ class ProductCarts extends StatelessWidget {
             height: 10,
           ),
           Text(
-            price.toString(),
+            "Price : Rs.${price.toString()}",
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
