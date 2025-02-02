@@ -7,7 +7,9 @@ class Product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //app Bar
       appBar: AppBar(
+        leading: Icon(Icons.icecream, color: Colors.white, size: 30),
         title: const Text(
           "ICE CREAM   POLAR",
           style: TextStyle(
@@ -19,6 +21,7 @@ class Product extends StatelessWidget {
         ),
         backgroundColor: Colors.pink,
       ),
+      //Body
       body: Stack(
         children: [
           Container(
