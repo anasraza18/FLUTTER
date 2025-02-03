@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/Widgets/slideAction.dart';
-import 'package:myapp/product.dart';
 
 class SignupView extends StatelessWidget {
   const SignupView({super.key});
@@ -138,7 +136,7 @@ class SignupView extends StatelessWidget {
                     ),
                     ElevatedButton(
                         onPressed: () {
-                          slideaction(func: Product()).navigate(context);
+                          //slideaction(func: Product()).navigate(context);
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.yellow,

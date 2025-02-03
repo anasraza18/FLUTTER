@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/Loginin_view.dart';
+import 'package:myapp/Widgets/chats.dart';
 import 'package:myapp/Widgets/slideAction.dart';
 import 'package:myapp/product.dart';
 
@@ -51,28 +52,29 @@ class MessangerView extends StatelessWidget {
       ),
       //Body
       body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/bg.webp"),
-              fit: BoxFit.cover,
-            ),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/bg.webp"),
+            fit: BoxFit.cover,
           ),
-          child: ListView(
-            children: [
-              ListTile(
-                leading: Icon(Icons.star),
-                title: Text("Item 1"),
-                subtitle: Text("This is item 1"),
-                trailing: Icon(Icons.arrow_forward),
-              ),
-              ListTile(
-                leading: Icon(Icons.star),
-                title: Text("Item 2"),
-                subtitle: Text("This is item 2"),
-                trailing: Icon(Icons.arrow_forward),
-              ),
-            ],
-          )),
+        ),
+
+        //list view
+        child: Container(
+          color: Colors.white.withOpacity(0.6),
+          child: ListView.builder(
+            itemCount: 1,
+            itemBuilder: (context, index) {
+              return Chats(
+                name: "Anas",
+                text: "Hi",
+                time: "2:00 pm",
+                image: "assets/images/2.webp",
+              );
+            },
+          ),
+        ),
+      ),
     );
   }
 }
