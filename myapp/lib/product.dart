@@ -63,14 +63,14 @@ class Product extends StatelessWidget {
                     children: [
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/1.jpg",
+                            imagepath: "assets/images/1.webp",
                             name: "Product 1",
                             price: 220),
                       ),
                       //product 2
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/2.jpg",
+                            imagepath: "assets/images/2.webp",
                             name: "Product 2",
                             price: 280),
                       ),
@@ -81,14 +81,14 @@ class Product extends StatelessWidget {
                     children: [
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/3.jpg",
+                            imagepath: "assets/images/3.webp",
                             name: "Product 3",
                             price: 880),
                       ),
                       //product 2
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/6.jpg",
+                            imagepath: "assets/images/6.webp",
                             name: "Product 4",
                             price: 500),
                       ),
@@ -99,14 +99,14 @@ class Product extends StatelessWidget {
                     children: [
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/5.jpg",
+                            imagepath: "assets/images/5.webp",
                             name: "Product 5",
                             price: 440),
                       ),
                       //product 2
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/4.jpg",
+                            imagepath: "assets/images/4.webp",
                             name: "Product 6",
                             price: 270),
                       ),
@@ -117,14 +117,14 @@ class Product extends StatelessWidget {
                     children: [
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/7.jpg",
+                            imagepath: "assets/images/7.webp",
                             name: "Product 7",
                             price: 220),
                       ),
                       //product 2
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/8.jpg",
+                            imagepath: "assets/images/8.webp",
                             name: "Product 8",
                             price: 780),
                       ),
@@ -135,14 +135,14 @@ class Product extends StatelessWidget {
                     children: [
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/9.jpg",
+                            imagepath: "assets/images/9.webp",
                             name: "Product 9",
                             price: 520),
                       ),
                       //product 2
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/10.jpg",
+                            imagepath: "assets/images/10.webp",
                             name: "Product 10",
                             price: 180),
                       ),
@@ -153,14 +153,14 @@ class Product extends StatelessWidget {
                     children: [
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/11.jpg",
+                            imagepath: "assets/images/11.webp",
                             name: "Product 11",
                             price: 820),
                       ),
                       //product 2
                       Expanded(
                         child: ProductCarts(
-                            imagepath: "assets/images/12.jpg",
+                            imagepath: "assets/images/12.webp",
                             name: "Product 12",
                             price: 380),
                       ),
