@@ -11,7 +11,7 @@ class MessangerView extends StatelessWidget {
       'name': 'Anas',
       'text': 'Hi!',
       'time': '02:00 pm',
-      'image': "assets/images/1.webp",
+      'image': "assets/images/anas.jpg",
     },
     {
       'name': 'Ali',

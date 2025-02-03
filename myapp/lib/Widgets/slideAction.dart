@@ -9,7 +9,7 @@ class slideaction extends StatelessWidget {
   Route _createSlideRoute() {
     return PageRouteBuilder(
       transitionDuration:
-          const Duration(seconds: 2), // Slow transition (2 seconds)
+          const Duration(milliseconds: 700), // Slow transition (2 seconds)
       pageBuilder: (context, animation, secondaryAnimation) => func,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         // Slide Animation (Back to Front)
