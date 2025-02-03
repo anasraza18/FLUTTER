@@ -51,13 +51,28 @@ class MessangerView extends StatelessWidget {
       ),
       //Body
       body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/bg.webp"),
-            fit: BoxFit.cover,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/bg.webp"),
+              fit: BoxFit.cover,
+            ),
           ),
-        ),
-      ),
+          child: ListView(
+            children: [
+              ListTile(
+                leading: Icon(Icons.star),
+                title: Text("Item 1"),
+                subtitle: Text("This is item 1"),
+                trailing: Icon(Icons.arrow_forward),
+              ),
+              ListTile(
+                leading: Icon(Icons.star),
+                title: Text("Item 2"),
+                subtitle: Text("This is item 2"),
+                trailing: Icon(Icons.arrow_forward),
+              ),
+            ],
+          )),
     );
   }
 }
