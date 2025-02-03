@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class ProductCarts extends StatelessWidget {
+class ProductCartsHoriz extends StatelessWidget {
   String? imagepath;
   String? name;
   double? price;
-  ProductCarts({
+  ProductCartsHoriz({
     super.key,
     required this.imagepath,
     required this.name,
@@ -32,33 +32,35 @@ class ProductCarts extends StatelessWidget {
             //clipBehavior: Clip.antiAlias,
             child: Image.asset(
               imagepath ?? "",
-              height: 140,
-              width: 170,
+              height: 100,
+              width: 100,
               fit: BoxFit.cover,
             ),
           ),
           SizedBox(
-            height: 10,
+            height: 5,
           ),
           Text(
             "${name ?? ''}",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
           SizedBox(
-            height: 10,
+            height: 5,
           ),
           Text(
             "Price : Rs.${price.toString()}",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
           SizedBox(
-            height: 10,
+            height: 5,
           ),
           ElevatedButton(
             onPressed: () {},
@@ -68,9 +70,9 @@ class ProductCarts extends StatelessWidget {
             child: Text(
               "ADD CART",
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 12,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.black,
               ),
             ),
           ),
