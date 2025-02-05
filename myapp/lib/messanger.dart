@@ -177,7 +177,7 @@ class MessangerView extends StatelessWidget {
                 child: Row(
                   children: [
                     Container(
-                      margin: EdgeInsets.all(10),
+                      margin: EdgeInsets.all(5),
                       width: 40,
                       height: 28,
                       decoration: BoxDecoration(
@@ -185,11 +185,33 @@ class MessangerView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(
-                        child: Text("All"),
+                        child: Text(
+                          "All",
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(10),
+                      margin: EdgeInsets.all(5),
+                      width: 60,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.yellow.withOpacity(0.7),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Unread",
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(5),
                       width: 80,
                       height: 30,
                       decoration: BoxDecoration(
@@ -197,37 +219,52 @@ class MessangerView extends StatelessWidget {
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(
-                        child: Text("Unread"),
+                        child: Text(
+                          "Favourites",
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(10),
-                      width: 100,
+                      margin: EdgeInsets.all(5),
+                      width: 70,
                       height: 30,
                       decoration: BoxDecoration(
                         color: Colors.yellow.withOpacity(0.7),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(
-                        child: Text("Favourites"),
+                        child: Text(
+                          "Groups",
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(10),
-                      width: 90,
+                      margin: EdgeInsets.all(5),
+                      width: 70,
                       height: 30,
                       decoration: BoxDecoration(
                         color: Colors.yellow.withOpacity(0.7),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(
-                        child: Text("Groups"),
+                        child: Text(
+                          "My Work",
+                          style: TextStyle(
+                            fontSize: 12,
+                          ),
+                        ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.all(10),
+                      margin: EdgeInsets.all(5),
                       width: 40,
-                      height: 35,
+                      height: 30,
                       decoration: BoxDecoration(
                         color: Colors.yellow.withOpacity(0.7),
                         borderRadius: BorderRadius.circular(15),
@@ -236,6 +273,7 @@ class MessangerView extends StatelessWidget {
                         child: IconButton(
                           onPressed: () {},
                           icon: Icon(Icons.add),
+                          iconSize: 16,
                         ),
                       ),
                     ),
