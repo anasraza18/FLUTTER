@@ -27,6 +27,11 @@ class ProductCartsHoriz extends StatelessWidget {
       ),
       child: Column(
         children: [
+          Stack(
+            children: [
+              Icon(Icons.favorite),
+            ],
+          ),
           ClipRRect(
             borderRadius: BorderRadius.circular(200.0),
             //clipBehavior: Clip.antiAlias,
