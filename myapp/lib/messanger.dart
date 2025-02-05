@@ -148,18 +148,114 @@ class MessangerView extends StatelessWidget {
 
         //list view
         child: Container(
-          color: Colors.white.withOpacity(0.8),
-          child: ListView.builder(
-            itemCount: users.length,
-            itemBuilder: (context, index) {
-              return Chats(
-                  name: users[index]['name']!,
-                  text: users[index]['text']!,
-                  time: users[index]['time']!,
-                  image: users[index]['image']!);
-            },
+          color: Colors.white.withOpacity(0.6),
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      width: 40,
+                      height: 28,
+                      decoration: BoxDecoration(
+                        color: Colors.yellow.withOpacity(0.7),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text("All"),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      width: 80,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.yellow.withOpacity(0.7),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text("Unread"),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      width: 100,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.yellow.withOpacity(0.7),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text("Favourites"),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      width: 90,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Colors.yellow.withOpacity(0.7),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: Text("Groups"),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.all(10),
+                      width: 40,
+                      height: 35,
+                      decoration: BoxDecoration(
+                        color: Colors.yellow.withOpacity(0.7),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: Center(
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.add),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: users.length,
+                  itemBuilder: (context, index) {
+                    return Chats(
+                        name: users[index]['name']!,
+                        text: users[index]['text']!,
+                        time: users[index]['time']!,
+                        image: users[index]['image']!);
+                  },
+                ),
+              ),
+            ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.pink,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.chat,
+              color: Colors.yellow,
+            ),
+            label: "Chats",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.update, color: Colors.yellow),
+            label: "Updates",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.call, color: Colors.yellow),
+            label: "Calls",
+          ),
+        ],
       ),
     );
   }
