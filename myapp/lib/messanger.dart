@@ -151,6 +151,27 @@ class MessangerView extends StatelessWidget {
           color: Colors.white.withOpacity(0.6),
           child: Column(
             children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.all(10),
+                      width: 330,
+                      child: Center(
+                        child: TextField(
+                          decoration: InputDecoration(
+                            labelText: "Search",
+                            prefixIcon: Icon(Icons.search),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
