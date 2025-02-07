@@ -5,6 +5,7 @@ class ProductCartsHoriz extends StatelessWidget {
   String? imagepath;
   String? name;
   double? price;
+
   ProductCartsHoriz({
     super.key,
     required this.imagepath,
@@ -29,7 +30,10 @@ class ProductCartsHoriz extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Icon(Icons.favorite),
+              Icon(
+                Icons.favorite_border,
+                color: Colors.white,
+              ),
             ],
           ),
           ClipRRect(
