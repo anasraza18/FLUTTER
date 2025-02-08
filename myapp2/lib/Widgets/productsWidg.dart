@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class Productswidg extends StatelessWidget {
   List data = [
     {'product': 'product 1', 'price': '223', 'image': 'assets/images/21.webp'},
