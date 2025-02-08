@@ -70,6 +70,7 @@ class ProductList extends StatelessWidget {
                     labelText: "Search"),
               ),
             ),
+            // large main image
             Container(
               color: Color(0xFFFFDAB9),
               //padding: EdgeInsets.all(10),
@@ -82,6 +83,38 @@ class ProductList extends StatelessWidget {
               ),
               width: 360,
               height: 200,
+            ),
+            Column(
+              children: [
+                Container(
+                  color: Color(0xFFFFDAB9),
+                  padding: EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Container(
+                        color: Colors.grey,
+                        padding: EdgeInsets.all(10),
+                        child: Text("All"),
+                      ),
+                      Container(
+                        color: Colors.grey,
+                        padding: EdgeInsets.all(10),
+                        child: Text("All"),
+                      ),
+                      Container(
+                        color: Colors.grey,
+                        padding: EdgeInsets.all(10),
+                        child: Text("All"),
+                      ),
+                      Container(
+                        color: Colors.grey,
+                        padding: EdgeInsets.all(10),
+                        child: Text("All"),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
             // grid view
             Container(
