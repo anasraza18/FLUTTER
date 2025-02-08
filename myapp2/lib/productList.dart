@@ -39,7 +39,6 @@ class ProductList extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(5),
                       margin: EdgeInsets.all(4),
-                      //color: Colors.white,
                       child: Icon(Icons.arrow_back),
                     ),
                     Container(
@@ -54,6 +53,7 @@ class ProductList extends StatelessWidget {
               ),
             ],
           ),
+          // serach bar
           Container(
             color: Color(0xFFFFDAB9),
             padding: EdgeInsets.all(10),
@@ -66,6 +66,17 @@ class ProductList extends StatelessWidget {
                   labelText: "Search"),
             ),
           ),
+          Container(
+            color: Color(0xFFFFDAB9),
+            //padding: EdgeInsets.all(10),
+            child: Image.asset(
+              'assets/images/23.webp',
+              fit: BoxFit.cover,
+            ),
+            width: 360,
+            height: 200,
+          ),
+          // grid view
           Expanded(
             child: Container(
               color: Color(0xFFFFDAB9),
