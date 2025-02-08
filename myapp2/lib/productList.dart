@@ -20,67 +20,75 @@ class ProductList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text(
-          "Products",
-          style: TextStyle(
-              fontSize: 38, color: Colors.white, fontWeight: FontWeight.bold),
-        ),
+        backgroundColor: Color(0xFFFFDAB9),
+        // title: Text(
+        //   "Products",
+        //   style: TextStyle(
+        //       fontSize: 38, color: Colors.black, fontWeight: FontWeight.bold),
+        // ),
+        toolbarHeight: 10,
       ),
-      body: Column(
-        children: [
-          Column(
-            children: [
-              Container(
-                color: Color(0xFFFFDAB9),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      margin: EdgeInsets.all(4),
-                      child: Icon(Icons.arrow_back),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(3),
-                      margin: EdgeInsets.all(4),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/anas.jpg'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Column(
+              children: [
+                // arrow back and circle avatar
+                Container(
+                  color: Color(0xFFFFDAB9),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(3),
+                        //margin: EdgeInsets.all(2),
+                        child: IconButton(
+                            onPressed: () {}, icon: Icon(Icons.arrow_back)),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          // serach bar
-          Container(
-            color: Color(0xFFFFDAB9),
-            padding: EdgeInsets.all(10),
-            child: TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(25),
+                      Container(
+                        padding: EdgeInsets.all(3),
+                        margin: EdgeInsets.all(4),
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage('assets/images/anas.jpg'),
+                        ),
+                      ),
+                    ],
                   ),
-                  prefixIcon: Icon(Icons.search),
-                  labelText: "Search"),
+                ),
+              ],
             ),
-          ),
-          Container(
-            color: Color(0xFFFFDAB9),
-            //padding: EdgeInsets.all(10),
-            child: Image.asset(
-              'assets/images/23.webp',
-              fit: BoxFit.cover,
+            // serach bar
+            Container(
+              color: Color(0xFFFFDAB9),
+              padding: EdgeInsets.all(10),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    prefixIcon: Icon(Icons.search),
+                    labelText: "Search"),
+              ),
             ),
-            width: 360,
-            height: 200,
-          ),
-          // grid view
-          Expanded(
-            child: Container(
+            Container(
+              color: Color(0xFFFFDAB9),
+              //padding: EdgeInsets.all(10),
+              child: ClipRRect(
+                child: Image.asset(
+                  'assets/images/23.webp',
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              width: 360,
+              height: 200,
+            ),
+            // grid view
+            Container(
               color: Color(0xFFFFDAB9),
               child: GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 5,
@@ -167,8 +175,8 @@ class ProductList extends StatelessWidget {
                 },
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
