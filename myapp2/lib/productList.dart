@@ -37,8 +37,10 @@ class ProductList extends StatelessWidget {
                         margin: EdgeInsets.all(15),
                         height: 40,
                         width: 40,
-                        child: IconButton(
-                            onPressed: () {}, icon: Icon(Icons.arrow_back)),
+                        child: Center(
+                          child: IconButton(
+                              onPressed: () {}, icon: Icon(Icons.arrow_back)),
+                        ),
                       ),
                       Container(
                         padding: EdgeInsets.all(3),
@@ -91,8 +93,8 @@ class ProductList extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 209, 137, 110),
-                          borderRadius: BorderRadius.circular(20),
+                          color: const Color.fromARGB(255, 228, 175, 156),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                         height: 40,
                         width: 50,
@@ -111,7 +113,7 @@ class ProductList extends StatelessWidget {
                         child: Center(child: Text("Ice Cube")),
                         decoration: BoxDecoration(
                           color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                       SizedBox(
@@ -122,7 +124,7 @@ class ProductList extends StatelessWidget {
                         child: Center(child: Text("Cones")),
                         decoration: BoxDecoration(
                           color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                       SizedBox(
@@ -133,7 +135,7 @@ class ProductList extends StatelessWidget {
                         child: Center(child: Text("Shakes")),
                         decoration: BoxDecoration(
                           color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ],
