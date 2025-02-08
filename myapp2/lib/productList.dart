@@ -149,6 +149,28 @@ class ProductList extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(bottom: 40),
+        child: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          currentIndex: 0,
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart),
+              label: "Cart",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_box),
+              label: "Discords",
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
