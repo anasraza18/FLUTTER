@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp2/Widgets/productsWidg.dart';
+import 'package:myapp2/joinus.dart';
 
 // ignore: must_be_immutable
 class ProductList extends StatelessWidget {
@@ -157,6 +158,18 @@ class ProductList extends StatelessWidget {
           backgroundColor: Colors.white,
           currentIndex: 0,
           type: BottomNavigationBarType.fixed,
+          onTap: (index) {
+            if (index == 0) {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Joinus()));
+            } else if (index == 1) {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Joinus()));
+            } else if (index == 2) {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Joinus()));
+            }
+          },
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart),
