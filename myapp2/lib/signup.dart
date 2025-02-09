@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:myapp2/login.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Signup extends StatelessWidget {
-  const Signup({super.key});
+  final ValueNotifier<bool> IsChecked = ValueNotifier(false);
+  Signup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +68,22 @@ class Signup extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Remainder me"),
+                  ValueListenableBuilder(
+                    valueListenable: IsChecked,
+                    builder: (context, value, child) {
+                      return Row(
+                        children: [
+                          Checkbox(
+                            value: value,
+                            onChanged: (bool? newValue) {
+                              IsChecked.value = newValue!;
+                            },
+                          ),
+                          Text("Remainder me"),
+                        ],
+                      );
+                    },
+                  ),
                   TextButton(
                     onPressed: () {},
                     child: Text("Forgot password?"),
@@ -94,7 +112,12 @@ class Signup extends StatelessWidget {
                 children: [
                   Text("Already have an account?"),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Login()),
+                      );
+                    },
                     child: Text("Login"),
                   ),
                 ],
@@ -122,16 +145,24 @@ class Signup extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.facebook),
+                    icon: Icon(
+                      Icons.facebook,
+                    ),
+                    color: Colors.blue,
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.facebook),
+                    icon: FaIcon(
+                      FontAwesomeIcons.google,
+                      color: Colors.red,
+                    ),
                   ),
                   IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.facebook),
-                  ),
+                      onPressed: () {},
+                      icon: FaIcon(
+                        FontAwesomeIcons.instagram,
+                        color: const Color.fromARGB(255, 223, 68, 7),
+                      )),
                 ],
               ),
             ],
