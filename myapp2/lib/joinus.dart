@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp2/login.dart';
+import 'package:myapp2/signup.dart';
 
 class Joinus extends StatelessWidget {
   const Joinus({super.key});
@@ -91,7 +92,7 @@ class Joinus extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Login()),
+                          MaterialPageRoute(builder: (context) => Signup()),
                         );
                       },
                       child: Text(

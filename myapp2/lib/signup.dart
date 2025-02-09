@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:myapp2/signup.dart';
 
-class Login extends StatelessWidget {
-  final ValueNotifier<bool> isChecked = ValueNotifier(false);
-  Login({super.key});
+class Signup extends StatelessWidget {
+  const Signup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,36 +10,33 @@ class Login extends StatelessWidget {
         backgroundColor: Color(0xFFFFF0E1),
       ),
       body: Container(
+        color: Color(0xFFFFF0E1),
         width: double.infinity,
         height: double.infinity,
-        color: Color(0xFFFFF0E1),
         padding: EdgeInsets.all(30),
         child: SingleChildScrollView(
           child: Column(
             children: [
               Center(
                 child: Text(
-                  "Welcome Back",
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Center(
-                child: Text(
                   "IceShop",
                   style: TextStyle(
-                    fontSize: 40,
+                    fontSize: 48,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
               SizedBox(
-                height: 50,
+                height: 40,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: "Username",
+                  prefixIcon: Icon(Icons.person),
+                ),
+              ),
+              SizedBox(
+                height: 10,
               ),
               TextField(
                 decoration: InputDecoration(
@@ -50,7 +45,7 @@ class Login extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               TextField(
                 decoration: InputDecoration(
@@ -59,31 +54,21 @@ class Login extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 5,
+                height: 10,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  labelText: "Confirm Password",
+                  prefixIcon: Icon(Icons.lock_person),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ValueListenableBuilder<bool>(
-                    valueListenable: isChecked,
-                    builder: (context, value, child) {
-                      return Row(
-                        children: [
-                          Checkbox(
-                            value: value,
-                            onChanged: (bool? newValue) {
-                              isChecked.value =
-                                  newValue!; // Updating ValueNotifier
-                            },
-                          ),
-                          Text("Remember Me"),
-                        ],
-                      );
-                    },
-                  ),
+                  Text("Remainder me"),
                   TextButton(
                     onPressed: () {},
-                    child: Text("Forgot Password ?"),
+                    child: Text("Forgot password?"),
                   ),
                 ],
               ),
@@ -93,7 +78,7 @@ class Login extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 child: Text(
-                  "LOGIN",
+                  "SIGNUP",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -104,21 +89,48 @@ class Login extends StatelessWidget {
                   minimumSize: Size(200, 50),
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Already have an account?"),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("Login"),
+                  ),
+                ],
+              ),
+              Text(
+                "OR",
+                style: TextStyle(
+                  fontSize: 22,
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Continue with",
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
               SizedBox(
                 height: 5,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text("Don't have an account?"),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Signup()),
-                      );
-                    },
-                    child: Text("Sign Up"),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.facebook),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.facebook),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.facebook),
                   ),
                 ],
               ),
