@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  final ValueNotifier<bool> isChecked = ValueNotifier(false);
+  Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,6 +11,8 @@ class Login extends StatelessWidget {
         backgroundColor: Color(0xFFFFF0E1),
       ),
       body: Container(
+        width: double.infinity,
+        height: double.infinity,
         color: Color(0xFFFFF0E1),
         padding: EdgeInsets.all(30),
         child: SingleChildScrollView(
@@ -55,17 +58,36 @@ class Login extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 5,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Remainder Me"),
-                  Text("Forgot password ?"),
+                  ValueListenableBuilder<bool>(
+                    valueListenable: isChecked,
+                    builder: (context, value, child) {
+                      return Row(
+                        children: [
+                          Checkbox(
+                            value: value,
+                            onChanged: (bool? newValue) {
+                              isChecked.value =
+                                  newValue!; // Updating ValueNotifier
+                            },
+                          ),
+                          Text("Remember Me"),
+                        ],
+                      );
+                    },
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("Forgot Password ?"),
+                  ),
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
               ElevatedButton(
                 onPressed: () {},
