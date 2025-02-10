@@ -42,7 +42,7 @@ class Counterapp extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 50,
+                height: 80,
               ),
               Counterweidget(),
             ],

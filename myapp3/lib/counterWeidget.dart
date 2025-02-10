@@ -14,19 +14,50 @@ class _CounterweidgetState extends State<Counterweidget> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          "$counter",
-          style: TextStyle(
-            fontSize: 32,
+        Container(
+          color: Colors.green,
+          height: 50,
+          width: 50,
+          child: Center(
+            child: Text(
+              "$counter",
+              style: TextStyle(
+                fontSize: 32,
+              ),
+            ),
           ),
         ),
-        ElevatedButton(
-          onPressed: () {
-            setState(() {
-              counter++;
-            });
-          },
-          child: Text("Add"),
+        SizedBox(
+          height: 10,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter++;
+                });
+              },
+              child: Text("Add"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter--;
+                });
+              },
+              child: Text("Minus"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter = 0;
+                });
+              },
+              child: Text("Reset"),
+            ),
+          ],
         ),
       ],
     );
