@@ -13,7 +13,7 @@ class Counterapp extends StatelessWidget {
       ),
       body: Container(
         padding: EdgeInsets.all(50),
-        color: Colors.blueAccent,
+        color: Colors.black,
         height: double.infinity,
         width: double.infinity,
         child: SingleChildScrollView(
@@ -26,6 +26,7 @@ class Counterapp extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 48,
                     fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -38,6 +39,7 @@ class Counterapp extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 48,
                     fontWeight: FontWeight.bold,
+                    color: Colors.white,
                   ),
                 ),
               ),
