@@ -16,7 +16,7 @@ class _CounterweidgetState extends State<Counterweidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          color: changecolor ? Colors.red : Colors.green,
+          color: changecolor ? Colors.red : Colors.blue,
           height: 50,
           width: 50,
           child: Center(
@@ -29,7 +29,7 @@ class _CounterweidgetState extends State<Counterweidget> {
           ),
         ),
         SizedBox(
-          height: 10,
+          height: 20,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -41,7 +41,15 @@ class _CounterweidgetState extends State<Counterweidget> {
                   changecolor = true;
                 });
               },
-              child: Text("Add"),
+              child: Text(
+                "Add",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+              ),
             ),
             ElevatedButton(
               onPressed: () {
@@ -50,7 +58,15 @@ class _CounterweidgetState extends State<Counterweidget> {
                   changecolor = false;
                 });
               },
-              child: Text("Minus"),
+              child: Text(
+                "Minus",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+              ),
             ),
             ElevatedButton(
               onPressed: () {
@@ -59,7 +75,15 @@ class _CounterweidgetState extends State<Counterweidget> {
                   changecolor = true;
                 });
               },
-              child: Text("Reset"),
+              child: Text(
+                "Reset",
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red,
+              ),
             ),
           ],
         ),
