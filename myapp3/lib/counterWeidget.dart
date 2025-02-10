@@ -9,13 +9,14 @@ class Counterweidget extends StatefulWidget {
 
 class _CounterweidgetState extends State<Counterweidget> {
   int counter = 0;
+  bool changecolor = false;
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          color: Colors.green,
+          color: changecolor ? Colors.red : Colors.green,
           height: 50,
           width: 50,
           child: Center(
@@ -37,6 +38,7 @@ class _CounterweidgetState extends State<Counterweidget> {
               onPressed: () {
                 setState(() {
                   counter++;
+                  changecolor = true;
                 });
               },
               child: Text("Add"),
@@ -45,6 +47,7 @@ class _CounterweidgetState extends State<Counterweidget> {
               onPressed: () {
                 setState(() {
                   counter--;
+                  changecolor = false;
                 });
               },
               child: Text("Minus"),
@@ -53,6 +56,7 @@ class _CounterweidgetState extends State<Counterweidget> {
               onPressed: () {
                 setState(() {
                   counter = 0;
+                  changecolor = true;
                 });
               },
               child: Text("Reset"),
