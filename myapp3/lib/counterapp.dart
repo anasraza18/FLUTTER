@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp3/counterWeidget.dart';
+
+import 'package:myapp3/widgets/counterWeidget.dart';
 
 class Counterapp extends StatelessWidget {
   const Counterapp({super.key});
