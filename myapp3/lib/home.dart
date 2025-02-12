@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp3/counterapp.dart';
-import 'package:myapp3/widgets/products.dart';
+import 'package:myapp3/widgets/productsWeidgets.dart';
 
 class Listofcounters extends StatelessWidget {
   const Listofcounters({super.key});

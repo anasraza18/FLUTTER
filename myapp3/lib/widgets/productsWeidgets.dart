@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp3/widgets/favouriteWeidget.dart';
 
 // ignore: must_be_immutable
 class homeWed extends StatelessWidget {
@@ -92,16 +93,21 @@ class homeWed extends StatelessWidget {
         itemCount: items.length,
         itemBuilder: (contex, index) {
           return ListTile(
-            leading: Container(
-              width: 100,
-              height: 100,
-              child: ClipRRect(
-                child: Image.asset(
-                  items[index]['images'],
-                  fit: BoxFit.cover,
+            leading: Stack(
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  child: ClipRRect(
+                    child: Image.asset(
+                      items[index]['images'],
+                      fit: BoxFit.cover,
+                    ),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
                 ),
-                borderRadius: BorderRadius.circular(5),
-              ),
+                favorite(),
+              ],
             ),
             title: Text(items[index]['product']),
             subtitle: Text("/~Rs.${items[index]['Price'].toString()}"),
