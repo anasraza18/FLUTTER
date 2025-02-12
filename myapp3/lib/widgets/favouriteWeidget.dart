@@ -22,7 +22,7 @@ class _favoriteState extends State<favorite> {
           Icons.favorite,
           color: isfav ? Colors.red : Colors.white,
         ),
-        iconSize: 32,
+        iconSize: 24,
       ),
     );
   }

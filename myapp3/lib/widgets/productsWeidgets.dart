@@ -92,26 +92,47 @@ class homeWed extends StatelessWidget {
         shrinkWrap: true,
         itemCount: items.length,
         itemBuilder: (contex, index) {
-          return ListTile(
-            leading: Stack(
-              children: [
-                Container(
-                  width: 100,
-                  height: 100,
-                  child: ClipRRect(
-                    child: Image.asset(
-                      items[index]['images'],
-                      fit: BoxFit.cover,
-                    ),
-                    borderRadius: BorderRadius.circular(5),
+          return Card(
+            color: Colors.amber,
+            shadowColor: Colors.black,
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              child: Center(
+                child: ListTile(
+                  leading: Stack(
+                    children: [
+                      Container(
+                        width: 100,
+                        height: 300,
+                        child: ClipRRect(
+                          child: Image.asset(
+                            items[index]['images'],
+                            fit: BoxFit.cover,
+                          ),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                      ),
+                      Positioned(top: 0, right: 0, child: favorite()),
+                    ],
                   ),
+                  title: Text(
+                    items[index]['product'],
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  subtitle: Text(
+                    "/~Rs.${items[index]['Price'].toString()}",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  trailing: Icon(Icons.shopping_bag),
                 ),
-                favorite(),
-              ],
+              ),
             ),
-            title: Text(items[index]['product']),
-            subtitle: Text("/~Rs.${items[index]['Price'].toString()}"),
-            trailing: Icon(Icons.shopping_bag),
           );
         },
       ),

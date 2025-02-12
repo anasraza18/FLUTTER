@@ -24,45 +24,63 @@ class Listofcounters extends StatelessWidget {
                 ),
               ),
             ),
-            ListTile(
-              title: Text(
-                "  Home",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+            Card(
+              color: Colors.amberAccent,
+              child: ListTile(
+                title: Center(
+                  child: Text(
+                    "  Home",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Listofcounters()),
+                  );
+                },
               ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Listofcounters()),
-                );
-              },
             ),
-            ListTile(
-              title: Text(
-                "  Account",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+            Card(
+              color: Colors.amberAccent,
+              child: ListTile(
+                title: Center(
+                  child: Text(
+                    "  Account",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
+                onTap: () {},
               ),
-              onTap: () {},
             ),
-            ListTile(
-              title: Text(
-                "  Counter",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+            Card(
+              color: Colors.amberAccent,
+              child: ListTile(
+                title: Center(
+                  child: Text(
+                    "  Counter",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Counterapp()),
+                  );
+                },
               ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Counterapp()),
-                );
-              },
             ),
           ],
         ),
