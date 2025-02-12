@@ -32,7 +32,12 @@ class Listofcounters extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Listofcounters()),
+                );
+              },
             ),
             ListTile(
               title: Text(
