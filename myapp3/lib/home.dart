@@ -152,6 +152,10 @@ class Listofcounters extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromARGB(255, 241, 232, 151),
+                        ),
                       ),
                       SizedBox(
                         width: 20,
@@ -163,6 +167,10 @@ class Listofcounters extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.black,
                           ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromARGB(255, 241, 232, 151),
                         ),
                       ),
                       SizedBox(
@@ -176,6 +184,10 @@ class Listofcounters extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromARGB(255, 241, 232, 151),
+                        ),
                       ),
                       SizedBox(
                         width: 20,
@@ -187,6 +199,10 @@ class Listofcounters extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.black,
                           ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromARGB(255, 241, 232, 151),
                         ),
                       ),
                     ],
