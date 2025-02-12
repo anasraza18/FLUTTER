@@ -20,7 +20,7 @@ class _favoriteState extends State<favorite> {
         },
         icon: Icon(
           Icons.favorite,
-          color: isfav ? Colors.red : Colors.white,
+          color: isfav ? Colors.red : const Color.fromARGB(255, 250, 243, 177),
         ),
         iconSize: 24,
       ),
