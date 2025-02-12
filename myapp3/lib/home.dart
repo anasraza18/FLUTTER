@@ -118,12 +118,7 @@ class Listofcounters extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.only(top: 20),
-                child: homeWed(),
-              ),
-            ),
+            homeWed(),
           ],
         ),
       ),

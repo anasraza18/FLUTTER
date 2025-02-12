@@ -83,26 +83,32 @@ class homeWed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: items.length,
-      itemBuilder: (contex, index) {
-        return ListTile(
-          leading: Container(
-            width: 100,
-            height: 100,
-            child: ClipRRect(
-              child: Image.asset(
-                items[index]['images'],
-                fit: BoxFit.cover,
+    return Expanded(
+      child: Container(
+        padding: EdgeInsets.only(top: 20),
+        width: double.infinity,
+        child: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (contex, index) {
+            return ListTile(
+              leading: Container(
+                width: 100,
+                height: 100,
+                child: ClipRRect(
+                  child: Image.asset(
+                    items[index]['images'],
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
               ),
-              borderRadius: BorderRadius.circular(5),
-            ),
-          ),
-          title: Text(items[index]['product']),
-          subtitle: Text("/~Rs.${items[index]['Price'].toString()}"),
-          trailing: Icon(Icons.shopping_bag),
-        );
-      },
+              title: Text(items[index]['product']),
+              subtitle: Text("/~Rs.${items[index]['Price'].toString()}"),
+              trailing: Icon(Icons.shopping_bag),
+            );
+          },
+        ),
+      ),
     );
   }
 }
