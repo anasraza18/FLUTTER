@@ -48,7 +48,7 @@ class _allproductdetailsState extends State<allproductdetails> {
                   padding: EdgeInsets.only(left: 20, top: 20),
                   child: Row(
                     children: [
-                      Text(productdata[0].name,
+                      Text(productdata[widget.index].name,
                           style: TextStyle(
                               fontSize: 42,
                               fontWeight: FontWeight.bold,
@@ -72,7 +72,7 @@ class _allproductdetailsState extends State<allproductdetails> {
                   padding: const EdgeInsets.only(left: 20, top: 10),
                   child: Row(
                     children: [
-                      Text(productdata[0].description,
+                      Text(productdata[widget.index].description,
                           style: TextStyle(fontSize: 22, color: Colors.white)),
                     ],
                   ),

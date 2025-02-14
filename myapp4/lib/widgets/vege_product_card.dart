@@ -13,21 +13,21 @@ class _VegeProductCardState extends State<VegeProductCard> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20),
-      child: GestureDetector(
-        onTap: () {},
-        child: GridView.builder(
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: vegeproductdata.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            mainAxisExtent: MediaQuery.of(context).size.height * 0.27,
-            childAspectRatio: 1,
-          ),
-          itemBuilder: (context, index) {
-            return Card(
+      child: GridView.builder(
+        physics: NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        itemCount: vegeproductdata.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          mainAxisExtent: MediaQuery.of(context).size.height * 0.27,
+          childAspectRatio: 1,
+        ),
+        itemBuilder: (context, index) {
+          return GestureDetector(
+            onTap: () {},
+            child: Card(
               // color: Colors.red,
               shadowColor: Colors.black,
               child: Column(
@@ -79,9 +79,9 @@ class _VegeProductCardState extends State<VegeProductCard> {
                   ),
                 ],
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }
