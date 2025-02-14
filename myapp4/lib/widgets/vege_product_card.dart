@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/vege_product_data.dart';
+import 'package:myapp4/screens/detail_cards_screen/vege_detail_screen.dart';
 
 class VegeProductCard extends StatefulWidget {
   const VegeProductCard({super.key});
@@ -26,7 +27,12 @@ class _VegeProductCardState extends State<VegeProductCard> {
         ),
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => VegeDetailScreen(index: index)));
+            },
             child: Card(
               // color: Colors.red,
               shadowColor: Colors.black,
