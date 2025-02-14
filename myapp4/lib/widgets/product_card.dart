@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/products_data.dart';
-import 'package:myapp4/screens/product_detail_screen.dart';
+import 'package:myapp4/screens/detail_cards_screen/product_detail_screen.dart';
 
 class AllGridview extends StatefulWidget {
   AllGridview({super.key});
@@ -32,8 +32,7 @@ class _AllGridviewState extends State<AllGridview> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => allproductdetails(
-                      index: index), // ✅ Class ka sahi naam aur index pass kiya
+                  builder: (context) => allproductdetails(index: index),
                 ),
               );
             },

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myapp4/screens/fruits_product_screen.dart';
-import 'package:myapp4/screens/product_grid_screen.dart';
-import 'package:myapp4/screens/salat_product_screen.dart';
-import 'package:myapp4/screens/vege_product_screen.dart';
+import 'package:myapp4/screens/products_gridview_screen/fruits_product_screen.dart';
+import 'package:myapp4/screens/products_gridview_screen/product_grid_screen.dart';
+import 'package:myapp4/screens/products_gridview_screen/salat_product_screen.dart';
+import 'package:myapp4/screens/products_gridview_screen/vege_product_screen.dart';
 
 class Catagory extends StatefulWidget {
   const Catagory({super.key});
