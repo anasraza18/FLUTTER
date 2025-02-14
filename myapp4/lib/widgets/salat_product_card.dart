@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/salat_product_data.dart';
+import 'package:myapp4/screens/detail_cards_screen/salat_detail_screen.dart';
 
 class SalatProductCard extends StatefulWidget {
   const SalatProductCard({super.key});
@@ -26,7 +27,12 @@ class _SalatProductCardState extends State<SalatProductCard> {
         ),
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SalatDetailScreen(index: index)));
+            },
             child: Card(
               // color: Colors.red,
               shadowColor: Colors.black,
