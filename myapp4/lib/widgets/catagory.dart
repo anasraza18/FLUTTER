@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp4/screens/product_grid_screen.dart';
-import 'package:myapp4/widgets/all_gridview.dart';
-import 'package:myapp4/widgets/fruits_gridview.dart';
 
 class Catagory extends StatefulWidget {
   const Catagory({super.key});
@@ -36,12 +33,12 @@ class _CatagoryState extends State<Catagory> {
               onPressed: () {
                 setState(() {
                   changecolor1 = !changecolor1;
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ProductGridScreen(),
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => ProductGridScreen(),
+                  //   ),
+                  // );
                 });
               },
               child: Center(
@@ -64,6 +61,12 @@ class _CatagoryState extends State<Catagory> {
               onPressed: () {
                 setState(() {
                   changecolor2 = !changecolor2;
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => FruitsProductGv(),
+                  //   ),
+                  // );
                 });
               },
               child: Center(
@@ -86,12 +89,6 @@ class _CatagoryState extends State<Catagory> {
               onPressed: () {
                 setState(() {
                   changecolor3 = !changecolor3;
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => FruitsGridview(),
-                    ),
-                  );
                 });
               },
               child: Center(

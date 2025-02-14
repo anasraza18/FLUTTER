@@ -1,10 +1,10 @@
-class Products {
-  String name;
-  String image;
-  double price;
-  String description;
+class Product {
+  final String name;
+  final String image;
+  final double price;
+  final String description;
 
-  Products(
+  Product(
       {required this.name,
       required this.price,
       required this.description,

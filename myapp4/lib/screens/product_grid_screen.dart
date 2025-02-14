@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp4/widgets/all_gridview.dart';
 import 'package:myapp4/widgets/catagory.dart';
-import 'package:myapp4/widgets/fruits_gridview.dart';
+import 'package:myapp4/widgets/product_card.dart';
 
 class ProductGridScreen extends StatefulWidget {
   const ProductGridScreen({super.key});
@@ -132,11 +131,7 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
               height: 30,
             ),
             Catagory(),
-            SizedBox(
-              height: 10,
-            ),
             AllGridview(),
-            FruitsGridview(),
           ],
         ),
       ),
