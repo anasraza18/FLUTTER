@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/products_data.dart';
-import 'package:myapp4/models/products.dart';
 
 class AllGridview extends StatefulWidget {
   AllGridview({super.key});
@@ -35,11 +34,11 @@ class _AllGridviewState extends State<AllGridview> {
                   height: MediaQuery.of(context).size.width * 0.30,
                   width: MediaQuery.of(context).size.width * 0.40,
                   child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
                     child: Image.asset(
                       productdata[index].image,
                       fit: BoxFit.cover,
                     ),
-                    borderRadius: BorderRadius.circular(8),
                   ),
                 ),
                 Padding(

@@ -61,6 +61,7 @@ class _CatagoryState extends State<Catagory> {
               onPressed: () {
                 setState(() {
                   changecolor2 = !changecolor2;
+
                   // Navigator.push(
                   //   context,
                   //   MaterialPageRoute(
