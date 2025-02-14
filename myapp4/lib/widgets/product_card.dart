@@ -22,12 +22,13 @@ class _AllGridviewState extends State<AllGridview> {
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          mainAxisExtent: 220,
+          mainAxisExtent: MediaQuery.of(context).size.height * 0.27,
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
           return Card(
             // color: Colors.red,
+            shadowColor: Colors.black,
             child: Column(
               children: [
                 Container(

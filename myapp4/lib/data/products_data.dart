@@ -5,7 +5,7 @@ List<Product> productdata = [
       name: "Product 1",
       price: 200,
       description: "description",
-      image: "assets/images/1.webp"),
+      image: "assets/images/11.webp"),
   Product(
       name: "Product 2",
       price: 200,
