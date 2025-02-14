@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myapp4/screens/fruits_product_screen.dart';
+import 'package:myapp4/screens/product_grid_screen.dart';
+import 'package:myapp4/screens/salat_product_screen.dart';
+import 'package:myapp4/screens/vege_product_screen.dart';
 
 class Catagory extends StatefulWidget {
   const Catagory({super.key});
@@ -33,12 +37,15 @@ class _CatagoryState extends State<Catagory> {
               onPressed: () {
                 setState(() {
                   changecolor1 = !changecolor1;
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => ProductGridScreen(),
-                  //   ),
-                  // );
+                  changecolor2 = false;
+                  changecolor3 = false;
+                  changecolor4 = false;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProductGridScreen(),
+                    ),
+                  );
                 });
               },
               child: Center(
@@ -61,13 +68,16 @@ class _CatagoryState extends State<Catagory> {
               onPressed: () {
                 setState(() {
                   changecolor2 = !changecolor2;
+                  changecolor1 = false;
+                  changecolor4 = false;
+                  changecolor3 = false;
 
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => FruitsProductGv(),
-                  //   ),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FruitsProductScreen(),
+                    ),
+                  );
                 });
               },
               child: Center(
@@ -90,6 +100,16 @@ class _CatagoryState extends State<Catagory> {
               onPressed: () {
                 setState(() {
                   changecolor3 = !changecolor3;
+                  changecolor1 = false;
+                  changecolor2 = false;
+                  changecolor4 = false;
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => VegeProductScreen(),
+                    ),
+                  );
                 });
               },
               child: Center(
@@ -112,6 +132,15 @@ class _CatagoryState extends State<Catagory> {
               onPressed: () {
                 setState(() {
                   changecolor4 = !changecolor4;
+                  changecolor3 = false;
+                  changecolor2 = false;
+                  changecolor1 = false;
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SalatProductScreen(),
+                    ),
+                  );
                 });
               },
               child: Center(
