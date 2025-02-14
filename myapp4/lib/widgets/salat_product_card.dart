@@ -25,55 +25,60 @@ class _SalatProductCardState extends State<SalatProductCard> {
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
-          return Card(
-            // color: Colors.red,
-            shadowColor: Colors.black,
-            child: Column(
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.width * 0.30,
-                  width: MediaQuery.of(context).size.width * 0.40,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: Image.asset(
-                      salatproductdata[index].image,
-                      fit: BoxFit.cover,
+          return GestureDetector(
+            onTap: () {},
+            child: Card(
+              // color: Colors.red,
+              shadowColor: Colors.black,
+              child: Column(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.width * 0.30,
+                    width: MediaQuery.of(context).size.width * 0.40,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(
+                        salatproductdata[index].image,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10, left: 10, top: 10),
-                  child: Row(
-                    children: [
-                      Text(salatproductdata[index].name),
-                    ],
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(right: 10, left: 10, top: 10),
+                    child: Row(
+                      children: [
+                        Text(salatproductdata[index].name),
+                      ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10, left: 10, top: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(salatproductdata[index].price.toString()),
-                      Container(
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        width: MediaQuery.of(context).size.width * 0.1,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: const Color.fromARGB(255, 245, 204, 189),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(right: 10, left: 10, top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(salatproductdata[index].price.toString()),
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.05,
+                          width: MediaQuery.of(context).size.width * 0.1,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color.fromARGB(255, 245, 204, 189),
+                          ),
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.add),
+                            color: Colors.brown,
+                            highlightColor:
+                                const Color.fromARGB(255, 236, 191, 174),
+                          ),
                         ),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.add),
-                          color: Colors.brown,
-                          highlightColor:
-                              const Color.fromARGB(255, 236, 191, 174),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         },

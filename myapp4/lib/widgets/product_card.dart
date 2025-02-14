@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/products_data.dart';
+import 'package:myapp4/screens/product_detail_screen.dart';
 
 class AllGridview extends StatefulWidget {
   AllGridview({super.key});
@@ -25,55 +26,68 @@ class _AllGridviewState extends State<AllGridview> {
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
-          return Card(
-            // color: Colors.red,
-            shadowColor: Colors.black,
-            child: Column(
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.width * 0.30,
-                  width: MediaQuery.of(context).size.width * 0.40,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: Image.asset(
-                      productdata[index].image,
-                      fit: BoxFit.cover,
+          return GestureDetector(
+            // ✅ GestureDetector yahan hona chahiye
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => allproductdetails(
+                      index: index), // ✅ Class ka sahi naam aur index pass kiya
+                ),
+              );
+            },
+            child: Card(
+              shadowColor: Colors.black,
+              child: Column(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.width * 0.30,
+                    width: MediaQuery.of(context).size.width * 0.40,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(
+                        productdata[index].image,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10, left: 10, top: 10),
-                  child: Row(
-                    children: [
-                      Text(productdata[index].name),
-                    ],
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(right: 10, left: 10, top: 10),
+                    child: Row(
+                      children: [
+                        Text(productdata[index].name),
+                      ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 10, left: 10, top: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(productdata[index].price.toString()),
-                      Container(
-                        height: MediaQuery.of(context).size.height * 0.05,
-                        width: MediaQuery.of(context).size.width * 0.1,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: const Color.fromARGB(255, 245, 204, 189),
+                  Padding(
+                    padding:
+                        const EdgeInsets.only(right: 10, left: 10, top: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(productdata[index].price.toString()),
+                        Container(
+                          height: MediaQuery.of(context).size.height * 0.05,
+                          width: MediaQuery.of(context).size.width * 0.1,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: const Color.fromARGB(255, 245, 204, 189),
+                          ),
+                          child: IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.add),
+                            color: Colors.brown,
+                            highlightColor:
+                                const Color.fromARGB(255, 236, 191, 174),
+                          ),
                         ),
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.add),
-                          color: Colors.brown,
-                          highlightColor:
-                              const Color.fromARGB(255, 236, 191, 174),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           );
         },
