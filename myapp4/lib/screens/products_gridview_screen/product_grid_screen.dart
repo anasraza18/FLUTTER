@@ -13,6 +13,8 @@ class ProductGridScreen extends StatefulWidget {
 }
 
 class _ProductGridScreenState extends State<ProductGridScreen> {
+  //-----------for search filter----------------------------------------------
+
   List<Product> filtered_product_data = [];
   TextEditingController searchController = TextEditingController();
   @override
@@ -36,6 +38,7 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
     });
   }
 
+// ----------------------------------------------------------------------------
   String? selectedvalue;
   @override
   Widget build(BuildContext context) {

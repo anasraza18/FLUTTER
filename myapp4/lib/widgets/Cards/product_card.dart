@@ -4,8 +4,11 @@ import 'package:myapp4/models/products.dart';
 import 'package:myapp4/screens/detail_cards_screen/product_detail_screen.dart';
 
 class AllGridview extends StatefulWidget {
-  final List<Product> filteredproductdata; // ✅ Filtered Data Accept Karna
+  //------for search filter------------------------
+  final List<Product> filteredproductdata;
   AllGridview({super.key, required this.filteredproductdata});
+
+  //----------------------------------------------------
 
   @override
   State<AllGridview> createState() => _AllGridviewState();
@@ -26,7 +29,7 @@ class _AllGridviewState extends State<AllGridview> {
       child: GridView.builder(
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: widget.filteredproductdata.length,
+        itemCount: widget.filteredproductdata.length, //for search filter
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
@@ -35,7 +38,7 @@ class _AllGridviewState extends State<AllGridview> {
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
-          var product = widget.filteredproductdata[index];
+          var product = widget.filteredproductdata[index]; //for search filter
           return GestureDetector(
             onTap: () {
               Navigator.push(
