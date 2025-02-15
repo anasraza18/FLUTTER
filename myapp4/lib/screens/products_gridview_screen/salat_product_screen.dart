@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp4/data/locations_data.dart';
 import 'package:myapp4/widgets/catagory.dart';
 import 'package:myapp4/widgets/salat_product_card.dart';
 
@@ -10,6 +11,7 @@ class SalatProductScreen extends StatefulWidget {
 }
 
 class _SalatProductScreenState extends State<SalatProductScreen> {
+  String? selectedvalue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +27,7 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.only(
-                      top: 60,
+                      top: 45,
                       right: 20,
                       left: 20,
                     ),
@@ -43,16 +45,41 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 5,
-                        ),
                         Row(
                           children: [
-                            Text(
-                              "Karachi,Pakistan",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
+                            DropdownButtonHideUnderline(
+                              child: Theme(
+                                data: Theme.of(context).copyWith(
+                                  canvasColor: Colors.black.withOpacity(0.9),
+                                ),
+                                child: DropdownButton<String>(
+                                  hint: Text(
+                                    'Select an option',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  borderRadius: BorderRadius.circular(8),
+                                  value: selectedvalue,
+                                  onChanged: (String? newValue) {
+                                    setState(() {
+                                      selectedvalue = newValue;
+                                    });
+                                  },
+                                  items: locations.map((String option) {
+                                    return DropdownMenuItem<String>(
+                                      value: option,
+                                      child: Text(
+                                        option,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    );
+                                  }).toList(),
+
+                                  //dropdownColor: Colors.black, // ⚡ Ye optional hai, Theme use ho rahi hai
+                                ),
                               ),
                             ),
                           ],
@@ -86,7 +113,7 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                               ),
                             ),
                             SizedBox(
-                              width: 10,
+                              width: 15,
                             ),
                             Row(
                               children: [
