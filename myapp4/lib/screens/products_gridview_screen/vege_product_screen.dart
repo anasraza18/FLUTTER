@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/locations_data.dart';
+import 'package:myapp4/data/vege_product_data.dart';
+import 'package:myapp4/models/products.dart';
 import 'package:myapp4/widgets/Cards/vege_product_card.dart';
 import 'package:myapp4/widgets/catagory.dart';
 
@@ -11,6 +13,29 @@ class VegeProductScreen extends StatefulWidget {
 }
 
 class _VegeProductScreenState extends State<VegeProductScreen> {
+  List<Product> filtered_vege_data = [];
+  TextEditingController searchController = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    filtered_vege_data = List.from(vegeproductdata);
+  }
+
+  void filter_vege_data(String query) {
+    List<Product> results = [];
+    if (query.isEmpty) {
+      results = List.from(vegeproductdata);
+    } else {
+      results = vegeproductdata
+          .where((vegeproduct) =>
+              vegeproduct.name.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+    }
+    setState(() {
+      filtered_vege_data = results;
+    });
+  }
+
   String? selectedvalue;
   @override
   Widget build(BuildContext context) {
@@ -91,6 +116,8 @@ class _VegeProductScreenState extends State<VegeProductScreen> {
                           children: [
                             Expanded(
                               child: TextFormField(
+                                controller: SearchController(),
+                                onChanged: (query) => filter_vege_data(query),
                                 decoration: InputDecoration(
                                   label: Text(
                                     "Search..",
@@ -158,7 +185,9 @@ class _VegeProductScreenState extends State<VegeProductScreen> {
               height: 30,
             ),
             Catagory(),
-            VegeProductCard(),
+            VegeProductCard(
+              filtervegedata: filtered_vege_data,
+            ),
           ],
         ),
       ),
