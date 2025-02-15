@@ -121,12 +121,10 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                                 controller: searchController,
                                 onChanged: (query) => filter_salat_data(query),
                                 decoration: InputDecoration(
-                                  label: Text(
-                                    "Search..",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
+                                  hintStyle: TextStyle(
+                                    color: Colors.white,
                                   ),
+                                  hintText: "Search..",
                                   prefixIconColor: Colors.white,
                                   prefixIcon: Icon(
                                     Icons.search,
@@ -136,6 +134,7 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                                     borderRadius: BorderRadius.circular(15),
                                     borderSide: BorderSide.none,
                                   ),
+                                  focusColor: Colors.white,
                                   fillColor:
                                       const Color.fromARGB(163, 107, 105, 105),
                                 ),
