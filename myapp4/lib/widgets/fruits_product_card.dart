@@ -10,6 +10,13 @@ class FruitsProductCard extends StatefulWidget {
 }
 
 class _FruitsProductCardState extends State<FruitsProductCard> {
+  List<bool> favfruits = [];
+  @override
+  void initState() {
+    super.initState();
+    favfruits = List.generate(fruitsproductdata.length, (index) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,7 +29,7 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          mainAxisExtent: MediaQuery.of(context).size.height * 0.27,
+          mainAxisExtent: MediaQuery.of(context).size.height * 0.30,
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
@@ -38,16 +45,30 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
               shadowColor: Colors.black,
               child: Column(
                 children: [
-                  Container(
-                    height: MediaQuery.of(context).size.width * 0.30,
-                    width: MediaQuery.of(context).size.width * 0.40,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
-                        fruitsproductdata[index].image,
-                        fit: BoxFit.cover,
+                  Stack(
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.17,
+                        width: MediaQuery.of(context).size.width * 0.40,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            fruitsproductdata[index].image,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ),
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            favfruits[index] = !favfruits[index];
+                          });
+                        },
+                        icon: Icon(Icons.favorite),
+                        color: favfruits[index] ? Colors.red : Colors.white,
+                        iconSize: 36,
+                      ),
+                    ],
                   ),
                   Padding(
                     padding:

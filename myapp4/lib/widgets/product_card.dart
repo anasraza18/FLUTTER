@@ -10,6 +10,13 @@ class AllGridview extends StatefulWidget {
 }
 
 class _AllGridviewState extends State<AllGridview> {
+  List<bool> fav = [];
+  @override
+  void initState() {
+    super.initState();
+    fav = List.generate(productdata.length, (index) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -22,12 +29,11 @@ class _AllGridviewState extends State<AllGridview> {
           crossAxisCount: 2,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          mainAxisExtent: MediaQuery.of(context).size.height * 0.27,
+          mainAxisExtent: MediaQuery.of(context).size.height * 0.30,
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
           return GestureDetector(
-            // ✅ GestureDetector yahan hona chahiye
             onTap: () {
               Navigator.push(
                 context,
@@ -40,16 +46,30 @@ class _AllGridviewState extends State<AllGridview> {
               shadowColor: Colors.black,
               child: Column(
                 children: [
-                  Container(
-                    height: MediaQuery.of(context).size.width * 0.30,
-                    width: MediaQuery.of(context).size.width * 0.40,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
-                        productdata[index].image,
-                        fit: BoxFit.cover,
+                  Stack(
+                    children: [
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.17,
+                        width: MediaQuery.of(context).size.width * 0.40,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            productdata[index].image,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ),
+                      IconButton(
+                        onPressed: () {
+                          setState(() {
+                            fav[index] = !fav[index];
+                          });
+                        },
+                        icon: Icon(Icons.favorite),
+                        color: fav[index] ? Colors.red : Colors.white,
+                        iconSize: 36,
+                      ),
+                    ],
                   ),
                   Padding(
                     padding:
