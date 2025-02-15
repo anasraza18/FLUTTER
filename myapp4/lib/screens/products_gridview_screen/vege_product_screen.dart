@@ -35,6 +35,7 @@ class _VegeProductScreenState extends State<VegeProductScreen> {
     setState(() {
       filtered_vege_data = results;
     });
+    //--------------------------------------------------------------------------
   }
 
   String? selectedvalue;
@@ -103,8 +104,6 @@ class _VegeProductScreenState extends State<VegeProductScreen> {
                                       ),
                                     );
                                   }).toList(),
-
-                                  //dropdownColor: Colors.black, // ⚡ Ye optional hai, Theme use ho rahi hai
                                 ),
                               ),
                             ),
@@ -117,7 +116,7 @@ class _VegeProductScreenState extends State<VegeProductScreen> {
                           children: [
                             Expanded(
                               child: TextFormField(
-                                controller: SearchController(),
+                                controller: searchController,
                                 onChanged: (query) => filter_vege_data(query),
                                 decoration: InputDecoration(
                                   label: Text(

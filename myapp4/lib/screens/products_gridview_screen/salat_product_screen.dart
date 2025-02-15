@@ -1,6 +1,3 @@
-import 'dart:collection';
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/locations_data.dart';
 import 'package:myapp4/data/salat_product_data.dart';
