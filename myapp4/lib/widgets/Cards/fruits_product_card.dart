@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/fruits_product_data.dart';
+import 'package:myapp4/models/products.dart';
 import 'package:myapp4/screens/detail_cards_screen/fruits_detail_screen.dart';
 
 class FruitsProductCard extends StatefulWidget {
-  const FruitsProductCard({super.key});
+  final List<Product> filterfruitdata;
+  const FruitsProductCard({super.key, required this.filterfruitdata});
 
   @override
   State<FruitsProductCard> createState() => _FruitsProductCardState();
@@ -24,7 +26,7 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
       child: GridView.builder(
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: fruitsproductdata.length,
+        itemCount: widget.filterfruitdata.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
@@ -33,6 +35,7 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
+          var fruit = widget.filterfruitdata[index];
           return GestureDetector(
             onTap: () {
               Navigator.push(
@@ -53,7 +56,7 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Image.asset(
-                            fruitsproductdata[index].image,
+                            fruit.image,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -75,7 +78,7 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
                         const EdgeInsets.only(right: 10, left: 10, top: 10),
                     child: Row(
                       children: [
-                        Text(fruitsproductdata[index].name),
+                        Text(fruit.name),
                       ],
                     ),
                   ),
@@ -85,7 +88,7 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(fruitsproductdata[index].price.toString()),
+                        Text(fruit.price.toString()),
                         Container(
                           height: MediaQuery.of(context).size.height * 0.05,
                           width: MediaQuery.of(context).size.width * 0.1,

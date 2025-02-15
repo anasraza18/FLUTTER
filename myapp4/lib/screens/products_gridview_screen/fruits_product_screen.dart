@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp4/data/fruits_product_data.dart';
 import 'package:myapp4/data/locations_data.dart';
+import 'package:myapp4/models/products.dart';
 import 'package:myapp4/widgets/Cards/fruits_product_card.dart';
 import 'package:myapp4/widgets/catagory.dart';
 
@@ -11,6 +13,32 @@ class FruitsProductScreen extends StatefulWidget {
 }
 
 class _FruitsProductScreenState extends State<FruitsProductScreen> {
+  //-----------for search filter----------------------------------------------
+
+  List<Product> filtered_fruit_data = [];
+  TextEditingController searchController = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    filtered_fruit_data = List.from(fruitsproductdata);
+  }
+
+  void filter_fruit_data(String query) {
+    List<Product> results = [];
+    if (query.isEmpty) {
+      results = List.from(fruitsproductdata);
+    } else {
+      results = fruitsproductdata
+          .where((product) =>
+              product.name.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+    }
+    setState(() {
+      filtered_fruit_data = results;
+    });
+  }
+
+// ----------------------------------------------------------------------------
   String? selectedvalue;
   @override
   Widget build(BuildContext context) {
@@ -77,8 +105,6 @@ class _FruitsProductScreenState extends State<FruitsProductScreen> {
                                       ),
                                     );
                                   }).toList(),
-
-                                  //dropdownColor: Colors.black, // ⚡ Ye optional hai, Theme use ho rahi hai
                                 ),
                               ),
                             ),
@@ -91,6 +117,8 @@ class _FruitsProductScreenState extends State<FruitsProductScreen> {
                           children: [
                             Expanded(
                               child: TextFormField(
+                                controller: searchController,
+                                onChanged: (query) => filter_fruit_data(query),
                                 decoration: InputDecoration(
                                   label: Text(
                                     "Search..",
@@ -158,7 +186,9 @@ class _FruitsProductScreenState extends State<FruitsProductScreen> {
               height: 30,
             ),
             Catagory(),
-            FruitsProductCard(),
+            FruitsProductCard(
+              filterfruitdata: filtered_fruit_data,
+            ),
           ],
         ),
       ),
