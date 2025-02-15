@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/locations_data.dart';
+import 'package:myapp4/data/products_data.dart';
+import 'package:myapp4/models/products.dart';
 import 'package:myapp4/widgets/Cards/product_card.dart';
 import 'package:myapp4/widgets/catagory.dart';
 
@@ -11,8 +13,30 @@ class ProductGridScreen extends StatefulWidget {
 }
 
 class _ProductGridScreenState extends State<ProductGridScreen> {
+  List<Product> filtered_product_data = [];
+  TextEditingController searchController = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    filtered_product_data = List.from(productdata);
+  }
+
+  void filter_product_data(String query) {
+    List<Product> results = [];
+    if (query.isEmpty) {
+      results = List.from(productdata);
+    } else {
+      results = productdata
+          .where((product) =>
+              product.name.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+    }
+    setState(() {
+      filtered_product_data = results;
+    });
+  }
+
   String? selectedvalue;
-  // List<String> locations = ['Karachi', 'Lahore', 'Multan', 'Islamabad'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,8 +102,6 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
                                       ),
                                     );
                                   }).toList(),
-
-                                  //dropdownColor: Colors.black, // ⚡ Ye optional hai, Theme use ho rahi hai
                                 ),
                               ),
                             ),
@@ -92,6 +114,9 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
                           children: [
                             Expanded(
                               child: TextFormField(
+                                controller: searchController,
+                                onChanged: (query) =>
+                                    filter_product_data(query),
                                 decoration: InputDecoration(
                                   label: Text(
                                     "Search..",
@@ -159,7 +184,9 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
               height: 30,
             ),
             Catagory(),
-            AllGridview(),
+            AllGridview(
+              filteredproductdata: filtered_product_data,
+            ),
           ],
         ),
       ),

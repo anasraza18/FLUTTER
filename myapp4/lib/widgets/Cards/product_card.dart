@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/products_data.dart';
+import 'package:myapp4/models/products.dart';
 import 'package:myapp4/screens/detail_cards_screen/product_detail_screen.dart';
 
 class AllGridview extends StatefulWidget {
-  AllGridview({super.key});
+  final List<Product> filteredproductdata; // ✅ Filtered Data Accept Karna
+  AllGridview({super.key, required this.filteredproductdata});
 
   @override
   State<AllGridview> createState() => _AllGridviewState();
@@ -24,7 +26,7 @@ class _AllGridviewState extends State<AllGridview> {
       child: GridView.builder(
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: productdata.length,
+        itemCount: widget.filteredproductdata.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
@@ -33,6 +35,7 @@ class _AllGridviewState extends State<AllGridview> {
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
+          var product = widget.filteredproductdata[index];
           return GestureDetector(
             onTap: () {
               Navigator.push(
@@ -54,7 +57,7 @@ class _AllGridviewState extends State<AllGridview> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Image.asset(
-                            productdata[index].image,
+                            product.image,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -76,7 +79,7 @@ class _AllGridviewState extends State<AllGridview> {
                         const EdgeInsets.only(right: 10, left: 10, top: 10),
                     child: Row(
                       children: [
-                        Text(productdata[index].name),
+                        Text(product.name),
                       ],
                     ),
                   ),
@@ -86,7 +89,7 @@ class _AllGridviewState extends State<AllGridview> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(productdata[index].price.toString()),
+                        Text(product.price.toString()),
                         Container(
                           height: MediaQuery.of(context).size.height * 0.05,
                           width: MediaQuery.of(context).size.width * 0.1,

@@ -2,12 +2,12 @@ import 'package:myapp4/models/products.dart';
 
 List<Product> productdata = [
   Product(
-      name: "Product 1",
+      name: "Cheeku",
       price: 200,
       description: "description",
       image: "assets/images/11.webp"),
   Product(
-      name: "Product 2",
+      name: "Garlic",
       price: 200,
       description: "description",
       image: "assets/images/2.webp"),
