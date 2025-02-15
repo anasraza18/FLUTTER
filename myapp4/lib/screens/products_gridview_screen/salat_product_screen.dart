@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/locations_data.dart';
+import 'package:myapp4/widgets/Cards/salat_product_card.dart';
 import 'package:myapp4/widgets/catagory.dart';
-import 'package:myapp4/widgets/salat_product_card.dart';
 
 class SalatProductScreen extends StatefulWidget {
   const SalatProductScreen({super.key});
