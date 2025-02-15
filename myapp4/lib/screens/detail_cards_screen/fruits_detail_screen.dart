@@ -14,7 +14,7 @@ class _FruitsDetailScreenState extends State<FruitsDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 240, 198, 183),
+      backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
@@ -38,7 +38,7 @@ class _FruitsDetailScreenState extends State<FruitsDetailScreen> {
                             height: MediaQuery.of(context).size.height * 0.6,
                             width: MediaQuery.of(context).size.width * 0.8,
                             decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 0, 0, 0),
+                              color: Colors.amber,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Column(
@@ -51,7 +51,7 @@ class _FruitsDetailScreenState extends State<FruitsDetailScreen> {
                                           style: TextStyle(
                                               fontSize: 42,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white)),
+                                              color: Colors.black)),
                                     ],
                                   ),
                                 ),
@@ -68,7 +68,7 @@ class _FruitsDetailScreenState extends State<FruitsDetailScreen> {
                                                   .description,
                                               style: TextStyle(
                                                   fontSize: 16,
-                                                  color: Colors.white)),
+                                                  color: Colors.black)),
                                         ),
                                       ),
                                     ],
@@ -85,7 +85,7 @@ class _FruitsDetailScreenState extends State<FruitsDetailScreen> {
                                           style: TextStyle(
                                               fontSize: 32,
                                               fontWeight: FontWeight.bold,
-                                              color: Colors.white)),
+                                              color: Colors.black)),
                                       Row(
                                         children: [
                                           IconButton(
@@ -95,7 +95,7 @@ class _FruitsDetailScreenState extends State<FruitsDetailScreen> {
                                               });
                                             },
                                             icon: Icon(Icons.add),
-                                            color: Colors.white,
+                                            color: Colors.black,
                                           ),
                                           Container(
                                             height: 30,
@@ -110,7 +110,7 @@ class _FruitsDetailScreenState extends State<FruitsDetailScreen> {
                                               style: TextStyle(
                                                 fontSize: 22,
                                                 fontWeight: FontWeight.bold,
-                                                color: Colors.white,
+                                                color: Colors.black,
                                               ),
                                             )),
                                           ),
@@ -124,7 +124,7 @@ class _FruitsDetailScreenState extends State<FruitsDetailScreen> {
                                                 });
                                               },
                                               icon: Icon(Icons.minimize),
-                                              color: Colors.white,
+                                              color: Colors.black,
                                               iconSize: 30,
                                             ),
                                           ),
@@ -140,14 +140,13 @@ class _FruitsDetailScreenState extends State<FruitsDetailScreen> {
                                     child: Text(
                                       "Buy Now",
                                       style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor: const Color.fromARGB(
-                                          255, 240, 198, 183),
+                                      backgroundColor: Colors.black,
                                     ),
                                   ),
                                 ),
