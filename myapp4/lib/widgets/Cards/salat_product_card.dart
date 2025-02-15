@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/salat_product_data.dart';
+import 'package:myapp4/models/products.dart';
 import 'package:myapp4/screens/detail_cards_screen/salat_detail_screen.dart';
 
 class SalatProductCard extends StatefulWidget {
-  const SalatProductCard({super.key});
+  final List<Product> filtersalatdata;
+  const SalatProductCard({super.key, required this.filtersalatdata});
 
   @override
   State<SalatProductCard> createState() => _SalatProductCardState();
@@ -24,7 +26,7 @@ class _SalatProductCardState extends State<SalatProductCard> {
       child: GridView.builder(
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: salatproductdata.length,
+        itemCount: widget.filtersalatdata.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
@@ -33,6 +35,7 @@ class _SalatProductCardState extends State<SalatProductCard> {
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
+          var salat = widget.filtersalatdata[index];
           return GestureDetector(
             onTap: () {
               Navigator.push(
@@ -53,7 +56,7 @@ class _SalatProductCardState extends State<SalatProductCard> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Image.asset(
-                            salatproductdata[index].image,
+                            salat.image,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -75,7 +78,7 @@ class _SalatProductCardState extends State<SalatProductCard> {
                         const EdgeInsets.only(right: 10, left: 10, top: 10),
                     child: Row(
                       children: [
-                        Text(salatproductdata[index].name),
+                        Text(salat.name),
                       ],
                     ),
                   ),
@@ -85,7 +88,7 @@ class _SalatProductCardState extends State<SalatProductCard> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(salatproductdata[index].price.toString()),
+                        Text(salat.price.toString()),
                         Container(
                           height: MediaQuery.of(context).size.height * 0.05,
                           width: MediaQuery.of(context).size.width * 0.1,

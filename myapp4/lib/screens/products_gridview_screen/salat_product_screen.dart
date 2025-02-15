@@ -1,5 +1,10 @@
+import 'dart:collection';
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/locations_data.dart';
+import 'package:myapp4/data/salat_product_data.dart';
+import 'package:myapp4/models/products.dart';
 import 'package:myapp4/widgets/Cards/salat_product_card.dart';
 import 'package:myapp4/widgets/catagory.dart';
 
@@ -11,6 +16,31 @@ class SalatProductScreen extends StatefulWidget {
 }
 
 class _SalatProductScreenState extends State<SalatProductScreen> {
+  //----------search filter--------------------
+  List<Product> filtered_salat_data = [];
+  TextEditingController searchController = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+    filtered_salat_data = List.from(salatproductdata);
+  }
+
+  void filter_salat_data(String query) {
+    List<Product> results = [];
+    if (query.isEmpty) {
+      results = List.from(salatproductdata);
+    } else {
+      results = salatproductdata
+          .where((salatproduct) =>
+              salatproduct.name.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+    }
+    setState(() {
+      filtered_salat_data = results;
+    });
+    //=----------------------------------------------------------
+  }
+
   String? selectedvalue;
   @override
   Widget build(BuildContext context) {
@@ -91,6 +121,8 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                           children: [
                             Expanded(
                               child: TextFormField(
+                                controller: searchController,
+                                onChanged: (query) => filter_salat_data(query),
                                 decoration: InputDecoration(
                                   label: Text(
                                     "Search..",
@@ -158,7 +190,9 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
               height: 30,
             ),
             Catagory(),
-            SalatProductCard(),
+            SalatProductCard(
+              filtersalatdata: filtered_salat_data,
+            ),
           ],
         ),
       ),
