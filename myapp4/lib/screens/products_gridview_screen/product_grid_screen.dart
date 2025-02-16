@@ -63,6 +63,7 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               "Location",
@@ -70,6 +71,11 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
                                 color: const Color.fromARGB(255, 214, 212, 212),
                                 fontSize: 16,
                               ),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(Icons.shopping_cart),
+                              color: Colors.white,
                             ),
                           ],
                         ),
@@ -111,7 +117,7 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
                           ],
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 5,
                         ),
                         Row(
                           children: [
@@ -141,7 +147,7 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
                               ),
                             ),
                             SizedBox(
-                              width: 15,
+                              width: 25,
                             ),
                             Row(
                               children: [
@@ -164,7 +170,7 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 200, right: 20, left: 20),
+                  padding: const EdgeInsets.only(top: 220, right: 20, left: 20),
                   child: Container(
                     height: 150,
                     width: double.infinity,
