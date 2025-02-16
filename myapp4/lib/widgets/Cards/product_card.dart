@@ -16,12 +16,16 @@ class AllGridview extends StatefulWidget {
 
 class _AllGridviewState extends State<AllGridview> {
   List<bool> fav = [];
+
   @override
   void initState() {
     super.initState();
     fav = List.generate(productdata.length, (index) => false);
   }
 
+//-----------add to cart--------------------------
+
+//----------------------------------------------------
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -14,6 +14,7 @@ class ProductGridScreen extends StatefulWidget {
 }
 
 class _ProductGridScreenState extends State<ProductGridScreen> {
+  //--------------add to cart-----------------------------------
   //-----------for search filter----------------------------------------------
 
   List<Product> filtered_product_data = [];

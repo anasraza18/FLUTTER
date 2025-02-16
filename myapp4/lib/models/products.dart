@@ -4,6 +4,8 @@ class Product {
   final double price;
   final String description;
 
+  var id;
+
   Product(
       {required this.name,
       required this.price,
