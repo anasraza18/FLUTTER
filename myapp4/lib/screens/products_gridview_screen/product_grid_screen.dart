@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp4/data/locations_data.dart';
 import 'package:myapp4/data/products_data.dart';
 import 'package:myapp4/models/products.dart';
+import 'package:myapp4/screens/cart_screen.dart';
 import 'package:myapp4/widgets/Cards/product_card.dart';
 import 'package:myapp4/widgets/catagory.dart';
 
@@ -73,7 +74,12 @@ class _ProductGridScreenState extends State<ProductGridScreen> {
                               ),
                             ),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => CartScreen()));
+                              },
                               icon: Icon(Icons.shopping_cart),
                               color: Colors.white,
                             ),
