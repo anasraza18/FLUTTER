@@ -17,6 +17,7 @@ class AllGridview extends StatefulWidget {
 }
 
 class _AllGridviewState extends State<AllGridview> {
+  //--------------favourite---------------------
   List<bool> fav = [];
 
   @override
@@ -25,9 +26,7 @@ class _AllGridviewState extends State<AllGridview> {
     fav = List.generate(productdata.length, (index) => false);
   }
 
-//-----------add to cart--------------------------
-
-//----------------------------------------------------
+//-----------------------------------------------
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -46,7 +45,8 @@ class _AllGridviewState extends State<AllGridview> {
         itemBuilder: (context, index) {
           var product = widget.filteredproductdata[index]; //for search filter
           final cart = Provider.of<CartProvider>(context); //for cart
-          bool isInCart = cart.cartItems.any((item) => item.id == product.id);
+          bool isInCart =
+              cart.cartItems.any((item) => item.id == product.id); //for cart
           return GestureDetector(
             onTap: () {
               Navigator.push(
@@ -107,19 +107,33 @@ class _AllGridviewState extends State<AllGridview> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: isInCart
-                                ? Colors.white // 🛑 Disable color if added
+                                ? Colors.white
                                 : const Color.fromARGB(255, 245, 204, 189),
                           ),
                           child: IconButton(
-                            onPressed: isInCart
-                                ? null // 🛑 Disable button if already in cart
-                                : () {
-                                    cart.addToCart(product);
-                                    setState(
-                                        () {}); // UI update for button color
-                                  },
+                            onPressed: () {
+                              if (isInCart) {
+                                // 🛑 Snackbar Message Show karna
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text("Product Already in Cart"),
+                                    backgroundColor: Colors.red,
+                                    duration: Duration(seconds: 2),
+                                  ),
+                                );
+                              } else {
+                                cart.addToCart(product);
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  SnackBar(
+                                    content: Text("Product Added to Cart"),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(seconds: 2),
+                                  ),
+                                );
+                              }
+                            },
                             icon: isInCart ? Icon(Icons.done) : Icon(Icons.add),
-                            color: const Color(0xFFFFFFFF),
+                            color: Colors.black,
                             highlightColor:
                                 const Color.fromARGB(255, 236, 191, 174),
                           ),
