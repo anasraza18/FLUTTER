@@ -45,6 +45,8 @@ class _AllGridviewState extends State<AllGridview> {
         ),
         itemBuilder: (context, index) {
           var product = widget.filteredproductdata[index]; //for search filter
+          final cart = Provider.of<CartProvider>(context); //for cart
+          bool isInCart = cart.cartItems.any((item) => item.id == product.id);
           return GestureDetector(
             onTap: () {
               Navigator.push(
@@ -104,15 +106,20 @@ class _AllGridviewState extends State<AllGridview> {
                           width: MediaQuery.of(context).size.width * 0.1,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: const Color.fromARGB(255, 245, 204, 189),
+                            color: isInCart
+                                ? Colors.white // 🛑 Disable color if added
+                                : const Color.fromARGB(255, 245, 204, 189),
                           ),
                           child: IconButton(
-                            onPressed: () {
-                              Provider.of<CartProvider>(context, listen: false)
-                                  .addToCart(product);
-                            },
-                            icon: Icon(Icons.add),
-                            color: Colors.brown,
+                            onPressed: isInCart
+                                ? null // 🛑 Disable button if already in cart
+                                : () {
+                                    cart.addToCart(product);
+                                    setState(
+                                        () {}); // UI update for button color
+                                  },
+                            icon: isInCart ? Icon(Icons.done) : Icon(Icons.add),
+                            color: const Color(0xFFFFFFFF),
                             highlightColor:
                                 const Color.fromARGB(255, 236, 191, 174),
                           ),

@@ -7,12 +7,14 @@ class CartProvider extends ChangeNotifier {
   List<Product> get cartItems => _cartItems;
 
   void addToCart(Product product) {
-    _cartItems.add(product);
-    notifyListeners();
+    if (!_cartItems.any((item) => item.id == product.id)) {
+      _cartItems.add(product);
+      notifyListeners();
+    }
   }
 
   void removeFromCart(Product product) {
-    _cartItems.remove(product);
+    _cartItems.removeWhere((item) => item.id == product.id);
     notifyListeners();
   }
 
