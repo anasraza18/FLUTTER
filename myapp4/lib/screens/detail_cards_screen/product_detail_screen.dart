@@ -17,7 +17,7 @@ class _allproductdetailsState extends State<allproductdetails> {
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 50),
+          padding: const EdgeInsets.only(left: 30, right: 30, top: 70),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -44,7 +44,7 @@ class _allproductdetailsState extends State<allproductdetails> {
                             child: Column(
                               children: [
                                 Padding(
-                                  padding: EdgeInsets.only(left: 20, top: 80),
+                                  padding: EdgeInsets.only(left: 20, top: 100),
                                   child: Row(
                                     children: [
                                       Text(productdata[widget.index].name,
@@ -99,7 +99,7 @@ class _allproductdetailsState extends State<allproductdetails> {
                                           ),
                                           Container(
                                             height: 30,
-                                            width: 10,
+                                            width: 15,
                                             decoration: BoxDecoration(
                                                 // color: Color.fromARGB(255, 235, 197, 183),
                                                 borderRadius:

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:myapp4/cart_provider.dart';
 import 'package:myapp4/data/products_data.dart';
 import 'package:myapp4/models/products.dart';
 import 'package:myapp4/screens/detail_cards_screen/product_detail_screen.dart';
+import 'package:provider/provider.dart';
 
 class AllGridview extends StatefulWidget {
   //------for search filter------------------------
@@ -105,7 +107,10 @@ class _AllGridviewState extends State<AllGridview> {
                             color: const Color.fromARGB(255, 245, 204, 189),
                           ),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Provider.of<CartProvider>(context, listen: false)
+                                  .addToCart(product);
+                            },
                             icon: Icon(Icons.add),
                             color: Colors.brown,
                             highlightColor:
