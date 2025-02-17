@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myapp4/data/locations_data.dart';
 import 'package:myapp4/data/salat_product_data.dart';
 import 'package:myapp4/models/products.dart';
+import 'package:myapp4/screens/cart_screen.dart';
 import 'package:myapp4/widgets/Cards/salat_product_card.dart';
 import 'package:myapp4/widgets/catagory.dart';
 
@@ -62,6 +63,7 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               "Location",
@@ -69,6 +71,16 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                                 color: const Color.fromARGB(255, 214, 212, 212),
                                 fontSize: 16,
                               ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => CartScreen()));
+                              },
+                              icon: Icon(Icons.shopping_cart),
+                              color: Colors.white,
                             ),
                           ],
                         ),

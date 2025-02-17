@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/vege_product_data.dart';
+import 'package:myapp4/models/cart_provider.dart';
 import 'package:myapp4/models/products.dart';
 import 'package:myapp4/screens/detail_cards_screen/vege_detail_screen.dart';
+import 'package:provider/provider.dart';
 
 class VegeProductCard extends StatefulWidget {
-  final List<Product> filtervegedata;
+  final List<Product> filtervegedata; //for search
   const VegeProductCard({super.key, required this.filtervegedata});
 
   @override
@@ -12,6 +14,7 @@ class VegeProductCard extends StatefulWidget {
 }
 
 class _VegeProductCardState extends State<VegeProductCard> {
+  //---------for favourite-------------------------
   List<bool> favvege = [];
   @override
   void initState() {
@@ -26,7 +29,8 @@ class _VegeProductCardState extends State<VegeProductCard> {
       child: GridView.builder(
         physics: NeverScrollableScrollPhysics(),
         shrinkWrap: true,
-        itemCount: widget.filtervegedata.length,
+        itemCount: widget.filtervegedata.length, //for search
+
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 10,
@@ -35,7 +39,10 @@ class _VegeProductCardState extends State<VegeProductCard> {
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
-          var vege = widget.filtervegedata[index];
+          var vege = widget.filtervegedata[index]; //for search
+          final cart = Provider.of<CartProvider>(context); //for cart
+          bool IsinCart =
+              cart.cartItems.any((items) => items.id == vege.id); //for cart
           return GestureDetector(
             onTap: () {
               Navigator.push(
@@ -94,11 +101,30 @@ class _VegeProductCardState extends State<VegeProductCard> {
                           width: MediaQuery.of(context).size.width * 0.1,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: const Color.fromARGB(255, 245, 204, 189),
+                            color: IsinCart
+                                ? Colors.white
+                                : const Color.fromARGB(255, 245, 204, 189),
                           ),
                           child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.add),
+                            onPressed: () {
+                              if (IsinCart) {
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: Text("Product Already in Cart"),
+                                  backgroundColor: Colors.red,
+                                  duration: Duration(seconds: 2),
+                                ));
+                              } else {
+                                cart.addToCart(vege);
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: Text("Product Added to Cart"),
+                                  backgroundColor: Colors.green,
+                                  duration: Duration(seconds: 2),
+                                ));
+                              }
+                            },
+                            icon: IsinCart ? Icon(Icons.done) : Icon(Icons.add),
                             color: Colors.brown,
                             highlightColor:
                                 const Color.fromARGB(255, 236, 191, 174),

@@ -124,7 +124,7 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
                                 ));
                               }
                             },
-                            icon: isInCart ? Icon(Icons.add) : Icon(Icons.done),
+                            icon: isInCart ? Icon(Icons.done) : Icon(Icons.add),
                             color: Colors.brown,
                             highlightColor:
                                 const Color.fromARGB(255, 236, 191, 174),
