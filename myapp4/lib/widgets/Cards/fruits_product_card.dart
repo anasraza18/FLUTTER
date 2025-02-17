@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/fruits_product_data.dart';
+import 'package:myapp4/models/cart_provider.dart';
 import 'package:myapp4/models/products.dart';
 import 'package:myapp4/screens/detail_cards_screen/fruits_detail_screen.dart';
+import 'package:provider/provider.dart';
 
 class FruitsProductCard extends StatefulWidget {
-  final List<Product> filterfruitdata;
+  final List<Product> filterfruitdata; //for search
   const FruitsProductCard({super.key, required this.filterfruitdata});
 
   @override
@@ -12,6 +14,7 @@ class FruitsProductCard extends StatefulWidget {
 }
 
 class _FruitsProductCardState extends State<FruitsProductCard> {
+  //--------------for search--------------------------------
   List<bool> favfruits = [];
   @override
   void initState() {
@@ -19,6 +22,7 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
     favfruits = List.generate(fruitsproductdata.length, (index) => false);
   }
 
+//-------------------------------------------------------------
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -35,7 +39,10 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
-          var fruit = widget.filterfruitdata[index];
+          var fruit = widget.filterfruitdata[index]; //fpr search
+          final cart = Provider.of<CartProvider>(context); //for cart
+          bool isInCart =
+              cart.cartItems.any((item) => item.id == fruit.id); //for cart
           return GestureDetector(
             onTap: () {
               Navigator.push(
@@ -94,11 +101,30 @@ class _FruitsProductCardState extends State<FruitsProductCard> {
                           width: MediaQuery.of(context).size.width * 0.1,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: const Color.fromARGB(255, 245, 204, 189),
+                            color: isInCart
+                                ? Colors.white
+                                : const Color.fromARGB(255, 245, 204, 189),
                           ),
                           child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.add),
+                            onPressed: () {
+                              if (isInCart) {
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: Text("Product Already in Cart"),
+                                  backgroundColor: Colors.red,
+                                  duration: Duration(seconds: 2),
+                                ));
+                              } else {
+                                cart.addToCart(fruit);
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: Text("Producr Added To the Cart"),
+                                  backgroundColor: Colors.green,
+                                  duration: Duration(seconds: 2),
+                                ));
+                              }
+                            },
+                            icon: isInCart ? Icon(Icons.add) : Icon(Icons.done),
                             color: Colors.brown,
                             highlightColor:
                                 const Color.fromARGB(255, 236, 191, 174),
