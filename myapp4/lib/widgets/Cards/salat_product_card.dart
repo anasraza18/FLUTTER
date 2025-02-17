@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:myapp4/data/salat_product_data.dart';
+import 'package:myapp4/models/cart_provider.dart';
 import 'package:myapp4/models/products.dart';
 import 'package:myapp4/screens/detail_cards_screen/salat_detail_screen.dart';
+import 'package:provider/provider.dart';
 
 class SalatProductCard extends StatefulWidget {
-  final List<Product> filtersalatdata;
+  final List<Product> filtersalatdata; //for search
   const SalatProductCard({super.key, required this.filtersalatdata});
 
   @override
@@ -12,6 +14,7 @@ class SalatProductCard extends StatefulWidget {
 }
 
 class _SalatProductCardState extends State<SalatProductCard> {
+  //-------------for favourite--------------------
   List<bool> salatfav = [];
   @override
   void initState() {
@@ -19,6 +22,7 @@ class _SalatProductCardState extends State<SalatProductCard> {
     salatfav = List.generate(salatproductdata.length, (index) => false);
   }
 
+//--------------------------------------------------
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -35,7 +39,9 @@ class _SalatProductCardState extends State<SalatProductCard> {
           childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
-          var salat = widget.filtersalatdata[index];
+          var salat = widget.filtersalatdata[index]; //for search
+          final cart = Provider.of<CartProvider>(context); // for cart
+          bool isInCart = cart.cartItems.any((items) => items.id == salat.id);
           return GestureDetector(
             onTap: () {
               Navigator.push(
@@ -94,11 +100,30 @@ class _SalatProductCardState extends State<SalatProductCard> {
                           width: MediaQuery.of(context).size.width * 0.1,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: const Color.fromARGB(255, 245, 204, 189),
+                            color: isInCart
+                                ? Colors.white
+                                : const Color.fromARGB(255, 245, 204, 189),
                           ),
                           child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.add),
+                            onPressed: () {
+                              if (isInCart) {
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: Text("Cart Already in Cart"),
+                                  backgroundColor: Colors.red,
+                                  duration: Duration(seconds: 2),
+                                ));
+                              } else {
+                                cart.addToCart(salat);
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                  content: Text("Product Added in Cart"),
+                                  backgroundColor: Colors.green,
+                                  duration: Duration(seconds: 2),
+                                ));
+                              }
+                            },
+                            icon: isInCart ? Icon(Icons.done) : Icon(Icons.add),
                             color: Colors.brown,
                             highlightColor:
                                 const Color.fromARGB(255, 236, 191, 174),
