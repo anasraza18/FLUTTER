@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp4/cart_provider.dart';
+import 'package:myapp4/models/cart_provider.dart';
 import 'package:provider/provider.dart';
 
 class CartScreen extends StatelessWidget {
@@ -37,19 +37,16 @@ class CartScreen extends StatelessWidget {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(8),
                                 child: Image.asset(
-                                  cartItem
-                                      .image, // 🟢 Fix: productdata[index].image -> cartItem.image
+                                  cartItem.image,
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
                             title: Text(
-                              cartItem
-                                  .name, // 🟢 Fix: productdata[index].name -> cartItem.title
+                              cartItem.name,
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            subtitle: Text(
-                                "\$${cartItem.price.toString()}"), // 🟢 Fix: productdata[index].price -> cartItem.price
+                            subtitle: Text("\$${cartItem.price.toString()}"),
                             trailing: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
@@ -60,13 +57,23 @@ class CartScreen extends StatelessWidget {
                                   icon: Icon(Icons.remove, color: Colors.red),
                                 ),
                                 Text(
-                                  "1", // 🟢 Abhi static hai, lekin quantity ko manage kar sakte hain
+                                  "1",
                                   style: TextStyle(fontSize: 18),
                                 ),
                                 IconButton(
                                   onPressed: () {},
                                   icon: Icon(Icons.add, color: Colors.green),
                                 ),
+                                IconButton(
+                                    onPressed: () {
+                                      Provider.of<CartProvider>(context,
+                                              listen: false)
+                                          .removeFromCart(cartItem);
+                                    },
+                                    icon: Icon(
+                                      Icons.delete,
+                                      color: Colors.red,
+                                    ))
                               ],
                             ),
                           ),
