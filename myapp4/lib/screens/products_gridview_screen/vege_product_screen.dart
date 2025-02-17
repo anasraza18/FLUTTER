@@ -122,7 +122,7 @@ class _VegeProductScreenState extends State<VegeProductScreen> {
                           ],
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 5,
                         ),
                         Row(
                           children: [
@@ -151,7 +151,7 @@ class _VegeProductScreenState extends State<VegeProductScreen> {
                               ),
                             ),
                             SizedBox(
-                              width: 15,
+                              width: 25,
                             ),
                             Row(
                               children: [
@@ -174,7 +174,7 @@ class _VegeProductScreenState extends State<VegeProductScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 200, right: 20, left: 20),
+                  padding: const EdgeInsets.only(top: 220, right: 20, left: 20),
                   child: Container(
                     height: 150,
                     width: double.infinity,

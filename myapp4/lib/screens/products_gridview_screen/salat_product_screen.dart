@@ -124,7 +124,7 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                           ],
                         ),
                         SizedBox(
-                          height: 20,
+                          height: 5,
                         ),
                         Row(
                           children: [
@@ -153,7 +153,7 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                               ),
                             ),
                             SizedBox(
-                              width: 15,
+                              width: 25,
                             ),
                             Row(
                               children: [
@@ -176,7 +176,7 @@ class _SalatProductScreenState extends State<SalatProductScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 200, right: 20, left: 20),
+                  padding: const EdgeInsets.only(top: 220, right: 20, left: 20),
                   child: Container(
                     height: 150,
                     width: double.infinity,
