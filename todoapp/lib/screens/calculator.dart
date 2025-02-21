@@ -9,6 +9,15 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
+  String displayText = "0";
+
+  void updateDisplay(String text) {
+    setState(() {
+      // Agar default "0" hai to replace karen, warna append
+      displayText = displayText == "0" ? text : displayText + text;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +33,7 @@ class _CalculatorState extends State<Calculator> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "0",
+                  displayText,
                   style: TextStyle(
                       fontSize: 32,
                       fontWeight: FontWeight.bold,
@@ -37,7 +46,9 @@ class _CalculatorState extends State<Calculator> {
             padding: const EdgeInsets.only(right: 5, left: 5),
             child: Row(
               children: [
-                gridviewcal(),
+                gridviewcal(
+                  updateDisplay: updateDisplay,
+                ),
               ],
             ),
           ),
