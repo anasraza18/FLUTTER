@@ -18,17 +18,20 @@ class _CalculatorState extends State<Calculator> {
       ),
       body: Column(
         children: [
-          Row(
-            children: [
-              Container(
-                height: 100,
-                width: 350,
-                color: Colors.red,
-                child: TextFormField(
-                  decoration: InputDecoration(),
+          Padding(
+            padding: const EdgeInsets.only(right: 40, bottom: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  "2",
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           Row(
             children: [
