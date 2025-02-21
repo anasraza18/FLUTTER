@@ -26,11 +26,7 @@ class _GridviewState extends State<gridviewcal> {
           itemBuilder: (context, index) {
             return ElevatedButton(
               onPressed: () {
-                if (button[index] == "AC") {
-                  widget.updateDisplay("AC");
-                } else {
-                  widget.updateDisplay(button[index]);
-                }
+                widget.updateDisplay(button[index]);
               },
               child: Text(
                 button[index],
