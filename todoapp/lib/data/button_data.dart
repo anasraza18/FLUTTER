@@ -3,83 +3,163 @@ import 'package:flutter/material.dart';
 List button = [
   ElevatedButton(
     onPressed: () {},
-    child: Text("AC"),
+    child: Text(
+      "AC",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("%"),
+    child: Text(
+      "%",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("x"),
+    child: Text(
+      "x",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("/"),
+    child: Text(
+      "/",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("7"),
+    child: Text(
+      "7",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("8"),
+    child: Text(
+      "8",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("9"),
+    child: Text(
+      "9",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("X"),
+    child: Text(
+      "X",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("4"),
+    child: Text(
+      "4",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("5"),
+    child: Text(
+      "5",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("6"),
+    child: Text(
+      "6",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("_"),
+    child: Text(
+      "_",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("1"),
+    child: Text(
+      "1",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("2"),
+    child: Text(
+      "2",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("3"),
+    child: Text(
+      "3",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("+"),
+    child: Text(
+      "+",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("00"),
+    child: Text(
+      "00",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("0"),
+    child: Text(
+      "0",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("."),
+    child: Text(
+      ".",
+      style: TextStyle(fontSize: 36, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
   ElevatedButton(
     onPressed: () {},
-    child: Text("="),
+    child: Text(
+      "=",
+      style: TextStyle(fontSize: 22, color: Colors.white),
+    ),
+    style: ElevatedButton.styleFrom(backgroundColor: Colors.amber),
   ),
 ];
 

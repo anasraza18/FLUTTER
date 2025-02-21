@@ -19,24 +19,27 @@ class _CalculatorState extends State<Calculator> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(right: 40, bottom: 20),
+            padding: const EdgeInsets.only(right: 50, bottom: 40, top: 60),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  "2",
+                  "0",
                   style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 32,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
               ],
             ),
           ),
-          Row(
-            children: [
-              gridviewcal(),
-            ],
+          Padding(
+            padding: const EdgeInsets.only(right: 5, left: 5),
+            child: Row(
+              children: [
+                gridviewcal(),
+              ],
+            ),
           ),
         ],
       ),
