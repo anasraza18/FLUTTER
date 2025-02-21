@@ -11,6 +11,18 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
   String displayText = "0";
 
+  void updateDisplay(String text) {
+    setState(() {
+      // Agar "AC" dabaya gaya hai to display clear karo
+      if (text == "AC") {
+        displayText = "0";
+      } else {
+        // Agar display pehle "0" hai to replace karo, warna append karo
+        displayText = displayText == "0" ? text : displayText + text;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +51,9 @@ class _CalculatorState extends State<Calculator> {
             padding: const EdgeInsets.only(right: 5, left: 5),
             child: Row(
               children: [
-                gridviewcal(),
+                gridviewcal(
+                  updateDisplay: updateDisplay,
+                ),
               ],
             ),
           ),
