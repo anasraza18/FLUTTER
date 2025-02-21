@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todoapp/data/button_data.dart';
 
 class gridviewcal extends StatefulWidget {
-  final Function(String) updateDisplay;
-  gridviewcal({super.key, required this.updateDisplay});
+  gridviewcal({super.key});
 
   @override
   State<gridviewcal> createState() => _GridviewState();
@@ -25,13 +24,7 @@ class _GridviewState extends State<gridviewcal> {
               mainAxisSpacing: 5),
           itemBuilder: (context, index) {
             return ElevatedButton(
-              onPressed: () {
-                if (button[index] == "AC") {
-                  widget.updateDisplay("0");
-                } else {
-                  widget.updateDisplay(button[index]);
-                }
-              },
+              onPressed: () {},
               child: Text(
                 button[index],
                 style: TextStyle(fontSize: 22, color: Colors.white),
