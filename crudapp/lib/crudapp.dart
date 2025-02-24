@@ -21,25 +21,40 @@ class _CrudappState extends State<Crudapp> {
       backgroundColor: const Color.fromARGB(255, 245, 210, 188),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 245, 210, 188),
-      ),
-      body: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.only(right: 30, left: 30),
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            child: TextFormField(
-              controller: search,
-              onChanged: (value) {
-                _runfilter(value);
-              },
-              decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search), hintText: "Search...."),
+        title: Padding(
+          padding: const EdgeInsets.only(top: 30),
+          child: Center(
+              child: Text(
+            "CRUD APP",
+            style: TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
             ),
-          ),
-          Expanded(
-            child: Listviewcrud(),
-          ),
-        ],
+          )),
+        ),
+      ),
+      body: Padding(
+        padding:
+            const EdgeInsets.only(right: 20, left: 20, top: 50, bottom: 30),
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.only(right: 30, left: 30),
+              width: MediaQuery.sizeOf(context).width * 1.0,
+              child: TextFormField(
+                controller: search,
+                onChanged: (value) {
+                  _runfilter(value);
+                },
+                decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search), hintText: "Search...."),
+              ),
+            ),
+            Expanded(
+              child: Listviewcrud(),
+            ),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

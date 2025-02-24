@@ -50,7 +50,10 @@ class _ListviewState extends State<Listviewcrud> {
                   onPressed: () {
                     _showMyDialogRmv(index: index);
                   },
-                  icon: Icon(Icons.delete),
+                  icon: Icon(
+                    Icons.delete,
+                    color: Colors.red,
+                  ),
                 ),
               ],
             ),
