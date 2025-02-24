@@ -38,6 +38,10 @@ class _CrudappState extends State<Crudapp> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          setState(() {});
+          numberr.clear();
+          titlee.clear();
+          subtitlee.clear();
           _showBottomSheet();
         },
         child: Icon(Icons.add),

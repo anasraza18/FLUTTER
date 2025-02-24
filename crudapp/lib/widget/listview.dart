@@ -51,9 +51,12 @@ class _ListviewState extends State<Listviewcrud> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text("Dialog Title"),
+          title: Text("Edit Data"),
           content: Column(
             children: [
+              SizedBox(
+                height: 10,
+              ),
               TextFormField(
                 controller: editnum,
                 decoration: InputDecoration(
@@ -61,12 +64,18 @@ class _ListviewState extends State<Listviewcrud> {
                   border: OutlineInputBorder(),
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               TextFormField(
                 controller: edittitle,
                 decoration: InputDecoration(
                   labelText: "edit title...",
                   border: OutlineInputBorder(),
                 ),
+              ),
+              SizedBox(
+                height: 10,
               ),
               TextFormField(
                 controller: editsubtitle,
