@@ -13,6 +13,7 @@ class _CrudappState extends State<Crudapp> {
   TextEditingController numberr = TextEditingController();
   TextEditingController titlee = TextEditingController();
   TextEditingController subtitlee = TextEditingController();
+  TextEditingController search = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,10 @@ class _CrudappState extends State<Crudapp> {
             padding: EdgeInsets.only(right: 30, left: 30),
             width: MediaQuery.sizeOf(context).width * 1.0,
             child: TextFormField(
+              controller: search,
+              onChanged: (value) {
+                _runfilter(value);
+              },
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.search), hintText: "Search...."),
             ),
@@ -99,11 +104,13 @@ class _CrudappState extends State<Crudapp> {
               SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
-                  setState(() {});
-                  data.add({
-                    'number': numberr.text,
-                    'title': titlee.text,
-                    'subtitle': subtitlee.text
+                  setState(() {
+                    data.add({
+                      'number': numberr.text,
+                      'title': titlee.text,
+                      'subtitle': subtitlee.text,
+                    });
+                    filtereddata = List.from(data);
                   });
                   Navigator.pop(context);
                 },
@@ -115,5 +122,28 @@ class _CrudappState extends State<Crudapp> {
       },
     );
   }
-  //---------------------------------------------------------------------
+
+  //-----------------search method----------------------------------------------------
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    filtereddata = List.from(data);
+  }
+
+  void _runfilter(String enterkeyword) {
+    List<Map<String, dynamic>> results = [];
+    if (enterkeyword.isEmpty) {
+      results = List.from(data);
+    } else {
+      results = data.where((item) {
+        final titlee = item['title'].toString().toLowerCase();
+        return titlee.contains(enterkeyword.toLowerCase());
+      }).toList();
+    }
+    setState(() {
+      filtereddata = results;
+    });
+  }
+  //--------------------------------------------------------------
 }

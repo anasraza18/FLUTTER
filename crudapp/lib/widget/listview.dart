@@ -12,25 +12,26 @@ class _ListviewState extends State<Listviewcrud> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: data.length,
+        itemCount: filtereddata.length,
         itemBuilder: (context, index) {
+          final searchitem = filtereddata[index];
           return ListTile(
             leading: Text(
-              data[index]['number'],
+              searchitem['number'],
               style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
             title: Text(
-              data[index]['title'],
+              searchitem['title'],
               style: TextStyle(
                   fontSize: 18,
                   // fontWeight: FontWeight.bold,
                   color: Colors.black),
             ),
             subtitle: Text(
-              data[index]['subtitle'],
+              searchitem['subtitle'],
               style: TextStyle(
                   fontSize: 16,
                   //fontWeight: FontWeight.bold,
@@ -115,10 +116,12 @@ class _ListviewState extends State<Listviewcrud> {
             ElevatedButton(
               onPressed: () {
                 {
-                  setState(() {});
-                  data[index]['number'] = editnum.text;
-                  data[index]['title'] = edittitle.text;
-                  data[index]['subtitle'] = editsubtitle.text;
+                  setState(() {
+                    data[index]['number'] = editnum.text;
+                    data[index]['title'] = edittitle.text;
+                    data[index]['subtitle'] = editsubtitle.text;
+                  });
+                  filtereddata = List.from(data);
                 }
                 Navigator.pop(context);
               },
@@ -130,7 +133,7 @@ class _ListviewState extends State<Listviewcrud> {
     );
   }
 
-  //-------------------show alert dialouge for edit--------------------------------------
+  //-------------------show alert dialouge for remove--------------------------------------
   void _showMyDialogRmv({required int index}) {
     // TextEditingController editnum =
     //     TextEditingController(text: data[index]['number']);
@@ -153,8 +156,11 @@ class _ListviewState extends State<Listviewcrud> {
             ElevatedButton(
               onPressed: () {
                 {
-                  setState(() {});
-                  data.removeAt(index);
+                  setState(() {
+                    data.removeAt(index);
+                  });
+
+                  filtereddata = List.from(data);
                 }
                 Navigator.pop(context);
               },
