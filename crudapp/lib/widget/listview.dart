@@ -15,9 +15,27 @@ class _ListviewState extends State<Listviewcrud> {
         itemCount: data.length,
         itemBuilder: (context, index) {
           return ListTile(
-            leading: Text(data[index]['number']),
-            title: Text(data[index]['title']),
-            subtitle: Text(data[index]['subtitle']),
+            leading: Text(
+              data[index]['number'],
+              style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+            ),
+            title: Text(
+              data[index]['title'],
+              style: TextStyle(
+                  fontSize: 18,
+                  // fontWeight: FontWeight.bold,
+                  color: Colors.black),
+            ),
+            subtitle: Text(
+              data[index]['subtitle'],
+              style: TextStyle(
+                  fontSize: 16,
+                  //fontWeight: FontWeight.bold,
+                  color: Colors.black),
+            ),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -53,6 +71,7 @@ class _ListviewState extends State<Listviewcrud> {
         return AlertDialog(
           title: Text("Edit Data"),
           content: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(
                 height: 10,
