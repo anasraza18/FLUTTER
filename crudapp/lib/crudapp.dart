@@ -1,3 +1,4 @@
+import 'package:crudapp/widget/listview.dart';
 import 'package:flutter/material.dart';
 
 class Crudapp extends StatefulWidget {
@@ -8,7 +9,6 @@ class Crudapp extends StatefulWidget {
 }
 
 class _CrudappState extends State<Crudapp> {
-  List<Map<String, dynamic>> data = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,29 +27,8 @@ class _CrudappState extends State<Crudapp> {
             ),
           ),
           Container(
-            height: MediaQuery.sizeOf(context).height * 0.8,
-            child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                    leading: Text("data"),
-                    title: Text("data"),
-                    subtitle: Text("data"),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.edit),
-                        ),
-                        IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.delete),
-                        ),
-                      ],
-                    ),
-                  );
-                }),
+            height: MediaQuery.sizeOf(context).height * 0.6,
+            child: Listviewcrud(),
           ),
         ],
       ),
