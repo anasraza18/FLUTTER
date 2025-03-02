@@ -36,7 +36,7 @@ class _LoginscreenState extends State<Loginscreen> {
                   Text(
                     "Log In",
                     style: TextStyle(
-                        fontSize: 42,
+                        fontSize: 34,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
@@ -47,7 +47,7 @@ class _LoginscreenState extends State<Loginscreen> {
 
             // Black Container (Moved Up & Height Fixed)
             Positioned(
-              top: 180, // Move slightly up to overlap
+              top: 160, // Move slightly up to overlap
               left: 0,
               right: 0,
               bottom: 0, // Ensures it fills the remaining space
@@ -60,7 +60,7 @@ class _LoginscreenState extends State<Loginscreen> {
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 30, right: 30, left: 35),
+                  padding: const EdgeInsets.only(top: 20, right: 30, left: 35),
                   child: Column(
                     children: [
                       Row(
@@ -68,7 +68,7 @@ class _LoginscreenState extends State<Loginscreen> {
                           Text(
                             "Welcome",
                             style: TextStyle(
-                                fontSize: 32, fontWeight: FontWeight.bold),
+                                fontSize: 26, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -86,13 +86,14 @@ class _LoginscreenState extends State<Loginscreen> {
                         ],
                       ),
                       SizedBox(
-                        height: 40,
+                        height: 20,
                       ),
                       Row(
                         children: [
                           Text(
                             "Email or Mobile Number",
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -109,13 +110,14 @@ class _LoginscreenState extends State<Loginscreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       Row(
                         children: [
                           Text(
                             "Password",
-                            style: TextStyle(fontSize: 22),
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
                           ),
                         ],
                       ),
@@ -138,11 +140,13 @@ class _LoginscreenState extends State<Loginscreen> {
                               onPressed: () {},
                               child: Text(
                                 "Forget Password",
-                                style: TextStyle(color: Colors.orange),
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 236, 106, 45),
+                                ),
                               ))
                         ],
                       ),
-                      SizedBox(height: 10),
+                      SizedBox(height: 20),
                       SizedBox(
                         width: 150,
                         child: ElevatedButton(
@@ -152,9 +156,51 @@ class _LoginscreenState extends State<Loginscreen> {
                             style: TextStyle(fontSize: 22, color: Colors.white),
                           ),
                           style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange),
+                            backgroundColor: Color.fromARGB(255, 236, 106, 45),
+                          ),
                         ),
-                      )
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [Text("or sign up with")],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.facebook_outlined,
+                            color: Color.fromARGB(255, 236, 106, 45),
+                          ),
+                          Icon(
+                            Icons.facebook_outlined,
+                            color: Color.fromARGB(255, 236, 106, 45),
+                          ),
+                          Icon(
+                            Icons.facebook_outlined,
+                            color: Color.fromARGB(255, 236, 106, 45),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Don't have an account?"),
+                          TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "Sign Up",
+                                style: TextStyle(
+                                    color: Color.fromARGB(255, 236, 106, 45)),
+                              ))
+                        ],
+                      ),
                     ],
                   ),
                 ),
