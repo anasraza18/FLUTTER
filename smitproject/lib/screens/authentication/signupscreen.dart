@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:smitproject/widgets/loginwidget.dart';
+import 'package:smitproject/widgets/signupwidget.dart';
 
-class Loginscreen extends StatefulWidget {
-  const Loginscreen({super.key});
+class Signupscreen extends StatefulWidget {
+  const Signupscreen({super.key});
 
   @override
-  State<Loginscreen> createState() => _LoginscreenState();
+  State<Signupscreen> createState() => _SignupscreenState();
 }
 
-class _LoginscreenState extends State<Loginscreen> {
+class _SignupscreenState extends State<Signupscreen> {
   int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Loginwidget(),
+      body: Signupwidget(),
 
       // Bottom Navigation Bar
       bottomNavigationBar: ClipRRect(
