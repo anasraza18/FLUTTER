@@ -21,7 +21,7 @@ class _LoginscreenState extends State<Loginscreen> {
             Container(
               height: 200,
               width: double.infinity, // Responsive width
-              color: const Color.fromARGB(255, 243, 205, 91),
+              color: Color.fromARGB(255, 243, 205, 91),
               padding:
                   EdgeInsets.only(top: 0, left: 10), // Padding for safe area
               child: Row(
@@ -85,6 +85,76 @@ class _LoginscreenState extends State<Loginscreen> {
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Email or Mobile Number",
+                            style: TextStyle(fontSize: 22),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Enter Email or Mobile Number",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          fillColor: Colors.orange,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "Password",
+                            style: TextStyle(fontSize: 22),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Enter Password",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          fillColor: Colors.orange,
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton(
+                              onPressed: () {},
+                              child: Text(
+                                "Forget Password",
+                                style: TextStyle(color: Colors.orange),
+                              ))
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      SizedBox(
+                        width: 150,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Log In",
+                            style: TextStyle(fontSize: 22, color: Colors.white),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.orange),
+                        ),
+                      )
                     ],
                   ),
                 ),
