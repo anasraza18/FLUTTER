@@ -97,13 +97,20 @@ class _LoginwidgetState extends State<Loginwidget> {
                     SizedBox(
                       height: 10,
                     ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        hintText: "Enter Email or Mobile Number",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.orange.shade100, // Background color
+                        borderRadius:
+                            BorderRadius.circular(20), // Rounded corners
+                      ),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Enter Email or Mobile Number",
+                          border: InputBorder.none, // No border
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 15), // Height adjust
                         ),
-                        fillColor: Colors.orange,
+                        style: TextStyle(fontSize: 16), // Text size adjust
                       ),
                     ),
                     SizedBox(
@@ -121,13 +128,20 @@ class _LoginwidgetState extends State<Loginwidget> {
                     SizedBox(
                       height: 10,
                     ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        hintText: "Enter Password",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.orange.shade100, // Background color
+                        borderRadius:
+                            BorderRadius.circular(20), // Rounded corners
+                      ),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Password",
+                          border: InputBorder.none, // No border
+                          contentPadding: EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 15), // Height adjust
                         ),
-                        fillColor: Colors.orange,
+                        style: TextStyle(fontSize: 16), // Text size adjust
                       ),
                     ),
                     Row(
