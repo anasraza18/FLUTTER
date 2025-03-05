@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 import 'package:smitproject/widgets/loginwidget.dart';
-import 'package:smitproject/widgets/productwidget.dart';
+import 'package:smitproject/widgets/catogorywidget.dart';
 
 class Productscreen extends StatefulWidget {
   const Productscreen({super.key});
@@ -15,7 +16,106 @@ class _ProductscreenState extends State<Productscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Productwidget(),
+      body: SizedBox.expand(
+        child: Stack(
+          children: [
+            Container(
+              height: 250,
+              width: double.infinity,
+              color: Color.fromARGB(255, 243, 205, 91),
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 70, right: 5, left: 5),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          height: 30,
+                          width: 180,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: EdgeInsets.symmetric(horizontal: 15),
+                          child: TextFormField(
+                            decoration: InputDecoration(
+                              hintText: "Search",
+                              border: InputBorder.none,
+                              suffixIcon: Icon(Icons.search),
+                            ),
+                            style: TextStyle(fontSize: 16),
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.shopping_bag_outlined,
+                              color: Color.fromARGB(255, 236, 106, 45)),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.notifications_active_outlined,
+                              color: Color.fromARGB(255, 236, 106, 45)),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.person_2_outlined,
+                              color: Color.fromARGB(255, 236, 106, 45)),
+                          onPressed: () {},
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Good Morning",
+                        style: TextStyle(
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Rise And Shine! It's Breakfast Time",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 236, 106, 45)),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              top: 200,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(30),
+                      topLeft: Radius.circular(30)),
+                  color: Colors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
+                  child: Column(
+                    children: [
+                      Catogorywidget(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
 
       // Bottom Navigation Bar
       bottomNavigationBar: ClipRRect(
