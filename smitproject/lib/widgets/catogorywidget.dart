@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:smitproject/data/catagorydata.dart';
 
 class Catogorywidget extends StatefulWidget {
   const Catogorywidget({super.key});
@@ -15,7 +16,7 @@ class _CatogorywidgetState extends State<Catogorywidget> {
       height: 130,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 5,
+        itemCount: catogory.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -23,18 +24,22 @@ class _CatogorywidgetState extends State<Catogorywidget> {
               children: [
                 Container(
                   height: 70,
-                  width: 50,
+                  width: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: Color.fromARGB(255, 243, 233, 202),
                   ),
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(LucideIcons.salad, size: 40),
+                    icon: Icon(
+                      catogory[index]['icon'],
+                      size: 40,
+                      color: Color.fromARGB(255, 236, 106, 45),
+                    ),
                   ),
                 ),
                 SizedBox(height: 5),
-                Text("Snacks", style: TextStyle(fontSize: 16)),
+                Text(catogory[index]['name'], style: TextStyle(fontSize: 16)),
               ],
             ),
           );

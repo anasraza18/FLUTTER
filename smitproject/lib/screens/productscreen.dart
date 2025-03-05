@@ -34,7 +34,7 @@ class _ProductscreenState extends State<Productscreen> {
                       children: [
                         Container(
                           height: 30,
-                          width: 180,
+                          width: 170,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(20),
@@ -44,25 +44,43 @@ class _ProductscreenState extends State<Productscreen> {
                             decoration: InputDecoration(
                               hintText: "Search",
                               border: InputBorder.none,
-                              suffixIcon: Icon(Icons.search),
+                              suffixIcon: Icon(
+                                LucideIcons.listFilter,
+                                color: Color.fromARGB(255, 236, 106, 45),
+                              ),
                             ),
                             style: TextStyle(fontSize: 16),
                           ),
                         ),
-                        IconButton(
-                          icon: Icon(Icons.shopping_bag_outlined,
-                              color: Color.fromARGB(255, 236, 106, 45)),
-                          onPressed: () {},
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: IconButton(
+                            icon: Icon(Icons.shopping_bag_outlined,
+                                color: Color.fromARGB(255, 236, 106, 45)),
+                            onPressed: () {},
+                          ),
                         ),
-                        IconButton(
-                          icon: Icon(Icons.notifications_active_outlined,
-                              color: Color.fromARGB(255, 236, 106, 45)),
-                          onPressed: () {},
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: IconButton(
+                            icon: Icon(Icons.notifications_active_outlined,
+                                color: Color.fromARGB(255, 236, 106, 45)),
+                            onPressed: () {},
+                          ),
                         ),
-                        IconButton(
-                          icon: Icon(Icons.person_2_outlined,
-                              color: Color.fromARGB(255, 236, 106, 45)),
-                          onPressed: () {},
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20)),
+                          child: IconButton(
+                            icon: Icon(Icons.person_2_outlined,
+                                color: Color.fromARGB(255, 236, 106, 45)),
+                            onPressed: () {},
+                          ),
                         ),
                       ],
                     ),
