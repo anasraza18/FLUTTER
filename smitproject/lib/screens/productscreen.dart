@@ -131,8 +131,8 @@ class _ProductscreenState extends State<Productscreen> {
                   padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
                   child: Column(
                     children: [
-                      Catogorywidget(),
-                      Bestseller(),
+                      Catogorywidget(), //cotagory widget
+                      Bestseller(), // best seller widget
                     ],
                   ),
                 ),
