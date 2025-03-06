@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:smitproject/data/bestsellerdata.dart';
-import 'package:smitproject/data/catagorydata.dart';
 
 class Bestseller extends StatefulWidget {
   const Bestseller({super.key});

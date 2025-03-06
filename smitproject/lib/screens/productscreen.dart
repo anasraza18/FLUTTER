@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 import 'package:smitproject/screens/authentication/loginscreen.dart';
 import 'package:smitproject/widgets/bestseller.dart';
-import 'package:smitproject/widgets/loginwidget.dart';
 import 'package:smitproject/widgets/catogorywidget.dart';
 
 class Productscreen extends StatefulWidget {

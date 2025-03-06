@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smitproject/screens/productscreen.dart';
 import 'package:smitproject/screens/splashscreen.dart';
 
 void main() {
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Productscreen(),
+      home: Splashscreen(),
     );
   }
 }
