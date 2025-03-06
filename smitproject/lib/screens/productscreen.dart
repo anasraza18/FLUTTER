@@ -132,32 +132,6 @@ class _ProductscreenState extends State<Productscreen> {
                   child: Column(
                     children: [
                       Catogorywidget(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Best Seller",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 26,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          TextButton.icon(
-                            onPressed: () {},
-                            label: Text(
-                              "View All",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 236, 106, 45),
-                              ),
-                            ),
-                            icon: Icon(
-                              Icons.arrow_left,
-                              color: Color.fromARGB(255, 236, 106, 45),
-                            ),
-                          )
-                        ],
-                      ),
                       Bestseller(),
                     ],
                   ),
