@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
+import 'package:smitproject/screens/authentication/loginscreen.dart';
 import 'package:smitproject/widgets/bestseller.dart';
 import 'package:smitproject/widgets/loginwidget.dart';
 import 'package:smitproject/widgets/catogorywidget.dart';
@@ -80,7 +81,12 @@ class _ProductscreenState extends State<Productscreen> {
                           child: IconButton(
                             icon: Icon(Icons.person_2_outlined,
                                 color: Color.fromARGB(255, 236, 106, 45)),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Loginscreen()));
+                            },
                           ),
                         ),
                       ],
