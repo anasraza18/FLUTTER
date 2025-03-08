@@ -1,0 +1,16 @@
+List recommenddata = [
+  {'image': "assets/images/11.webp", 'price': 123, 'ratting': 5.0},
+  {'image': "assets/images/12.webp", 'price': 13, 'ratting': 2.0},
+  {'image': "assets/images/13.webp", 'price': 33, 'ratting': 3.0},
+  {'image': "assets/images/14.webp", 'price': 44, 'ratting': 4.0},
+  {'image': "assets/images/15.webp", 'price': 53, 'ratting': 5.0},
+  {'image': "assets/images/16.webp", 'price': 66, 'ratting': 5.0},
+  {'image': "assets/images/17.webp", 'price': 15, 'ratting': 6.0},
+  {'image': "assets/images/18.webp", 'price': 63, 'ratting': 7.0},
+  {'image': "assets/images/19.webp", 'price': 73, 'ratting': 8.0},
+  {'image': "assets/images/20.webp", 'price': 63, 'ratting': 4.0},
+  {'image': "assets/images/1.webp", 'price': 73, 'ratting': 5.0},
+  {'image': "assets/images/2.webp", 'price': 23, 'ratting': 5.0},
+  {'image': "assets/images/3.webp", 'price': 13, 'ratting': 5.0},
+  {'image': "assets/images/4.webp", 'price': 12, 'ratting': 5.0},
+];

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smitproject/data/bestsellerdata.dart';
+import 'package:smitproject/data/recommenddata.dart';
 
 class Recommendwidget extends StatefulWidget {
   const Recommendwidget({super.key});
@@ -34,7 +35,7 @@ class _RecommendwidgetState extends State<Recommendwidget> {
                 mainAxisSpacing: 5,
                 crossAxisSpacing: 5,
               ),
-              itemCount: 10,
+              itemCount: recommenddata.length,
               itemBuilder: (contex, index) {
                 return Stack(
                   children: [
@@ -43,7 +44,7 @@ class _RecommendwidgetState extends State<Recommendwidget> {
                         borderRadius: BorderRadius.circular(30),
                         color: const Color.fromARGB(255, 243, 233, 202),
                         image: DecorationImage(
-                          image: AssetImage(bestsellerdata[index]['image']),
+                          image: AssetImage(recommenddata[index]['image']),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -67,7 +68,7 @@ class _RecommendwidgetState extends State<Recommendwidget> {
                           children: [
                             Center(
                               child: Text(
-                                " 5.0",
+                                " ${recommenddata[index]['ratting'].toString()}",
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 16),
                               ),
@@ -114,7 +115,7 @@ class _RecommendwidgetState extends State<Recommendwidget> {
                                 bottomLeft: Radius.circular(20))),
                         child: Center(
                             child: Text(
-                          "RS.${bestsellerdata[index]['price'].toString()}",
+                          "RS.${recommenddata[index]['price'].toString()}",
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 16,
