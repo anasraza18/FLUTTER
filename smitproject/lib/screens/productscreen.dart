@@ -3,6 +3,7 @@ import 'package:lucide_icons/lucide_icons.dart';
 import 'package:smitproject/screens/authentication/loginscreen.dart';
 import 'package:smitproject/widgets/bestseller.dart';
 import 'package:smitproject/widgets/catogorywidget.dart';
+import 'package:smitproject/widgets/recommendwidget.dart';
 import 'package:smitproject/widgets/sliderwidget.dart';
 
 class Productscreen extends StatefulWidget {
@@ -138,6 +139,7 @@ class _ProductscreenState extends State<Productscreen> {
                         Catogorywidget(), //cotagory widget
                         Bestseller(), // best seller widget
                         Sliderwidget(),
+                        Recommendwidget(),
                       ],
                     ),
                   ),
