@@ -19,25 +19,27 @@ class _SignupwidgetState extends State<Signupwidget> {
           Container(
             height: 160,
             width: double.infinity, // Responsive width
-            color: Color.fromARGB(255, 243, 205, 91),
-            padding: EdgeInsets.only(top: 0, left: 10), // Padding for safe area
+            color: const Color.fromARGB(255, 243, 205, 91),
+            padding: const EdgeInsets.only(
+                top: 0, left: 10), // Padding for safe area
             child: Row(
               children: [
                 IconButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(Icons.arrow_back, color: Colors.white, size: 28),
+                  icon: const Icon(Icons.arrow_back,
+                      color: Colors.white, size: 28),
                 ),
-                Spacer(),
-                Text(
+                const Spacer(),
+                const Text(
                   "Sign Up",
                   style: TextStyle(
                       fontSize: 34,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
-                Spacer(),
+                const Spacer(),
               ],
             ),
           ),
@@ -49,7 +51,7 @@ class _SignupwidgetState extends State<Signupwidget> {
             right: 0,
             bottom: 0, // Ensures it fills the remaining space
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
@@ -61,7 +63,7 @@ class _SignupwidgetState extends State<Signupwidget> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Row(
+                      const Row(
                         children: [
                           Text(
                             "Full Name",
@@ -70,7 +72,7 @@ class _SignupwidgetState extends State<Signupwidget> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -80,19 +82,20 @@ class _SignupwidgetState extends State<Signupwidget> {
                               BorderRadius.circular(20), // Rounded corners
                         ),
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: "Full Name",
                             border: InputBorder.none, // No border
                             contentPadding: EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 15), // Height adjust
                           ),
-                          style: TextStyle(fontSize: 16), // Text size adjust
+                          style:
+                              const TextStyle(fontSize: 16), // Text size adjust
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Text(
                             "Password",
@@ -101,7 +104,7 @@ class _SignupwidgetState extends State<Signupwidget> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -111,19 +114,20 @@ class _SignupwidgetState extends State<Signupwidget> {
                               BorderRadius.circular(20), // Rounded corners
                         ),
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: "Password",
                             border: InputBorder.none, // No border
                             contentPadding: EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 15), // Height adjust
                           ),
-                          style: TextStyle(fontSize: 16), // Text size adjust
+                          style:
+                              const TextStyle(fontSize: 16), // Text size adjust
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Text(
                             "Email",
@@ -132,7 +136,7 @@ class _SignupwidgetState extends State<Signupwidget> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -142,19 +146,20 @@ class _SignupwidgetState extends State<Signupwidget> {
                               BorderRadius.circular(20), // Rounded corners
                         ),
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: "Enter Email",
                             border: InputBorder.none, // No border
                             contentPadding: EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 15), // Height adjust
                           ),
-                          style: TextStyle(fontSize: 16), // Text size adjust
+                          style:
+                              const TextStyle(fontSize: 16), // Text size adjust
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Text(
                             "Mobile Number",
@@ -163,7 +168,7 @@ class _SignupwidgetState extends State<Signupwidget> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -173,19 +178,20 @@ class _SignupwidgetState extends State<Signupwidget> {
                               BorderRadius.circular(20), // Rounded corners
                         ),
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: "Enter Mobile Number",
                             border: InputBorder.none, // No border
                             contentPadding: EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 15), // Height adjust
                           ),
-                          style: TextStyle(fontSize: 16), // Text size adjust
+                          style:
+                              const TextStyle(fontSize: 16), // Text size adjust
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         children: [
                           Text(
                             "Date of birth",
@@ -194,7 +200,7 @@ class _SignupwidgetState extends State<Signupwidget> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Container(
@@ -204,23 +210,24 @@ class _SignupwidgetState extends State<Signupwidget> {
                               BorderRadius.circular(20), // Rounded corners
                         ),
                         child: TextFormField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: "Enter Date of birth",
                             border: InputBorder.none, // No border
                             contentPadding: EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 15), // Height adjust
                           ),
-                          style: TextStyle(fontSize: 16), // Text size adjust
+                          style:
+                              const TextStyle(fontSize: 16), // Text size adjust
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment
                             .center, // Center alignment maintain karega
                         children: [
-                          Text(
+                          const Text(
                             "By conditions, you agree to",
                             style: TextStyle(fontSize: 14),
                           ),
@@ -234,16 +241,16 @@ class _SignupwidgetState extends State<Signupwidget> {
                                 style: TextButton.styleFrom(
                                   padding:
                                       EdgeInsets.zero, // Default padding hataya
-                                  minimumSize: Size(
+                                  minimumSize: const Size(
                                       0, 0), // Button ka extra size remove kiya
                                 ),
-                                child: Text(
+                                child: const Text(
                                   "Terms of Use",
                                   style: TextStyle(
                                       color: Color.fromARGB(255, 236, 106, 45)),
                                 ),
                               ),
-                              Text(
+                              const Text(
                                 " and ",
                                 style: TextStyle(fontSize: 14),
                               ),
@@ -252,10 +259,10 @@ class _SignupwidgetState extends State<Signupwidget> {
                                 style: TextButton.styleFrom(
                                   padding:
                                       EdgeInsets.zero, // Default padding hataya
-                                  minimumSize: Size(
+                                  minimumSize: const Size(
                                       0, 0), // Button ka extra size remove kiya
                                 ),
-                                child: Text(
+                                child: const Text(
                                   "Privacy Policy",
                                   style: TextStyle(
                                       color: Color.fromARGB(255, 236, 106, 45)),
@@ -265,28 +272,29 @@ class _SignupwidgetState extends State<Signupwidget> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       SizedBox(
                         width: 150,
                         child: ElevatedButton(
                           onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromARGB(255, 236, 106, 45),
+                          ),
                           child: Text(
                             "Sign Up",
                             style: TextStyle(fontSize: 22, color: Colors.white),
                           ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color.fromARGB(255, 236, 106, 45),
-                          ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [Text("or sign up with")],
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -304,21 +312,22 @@ class _SignupwidgetState extends State<Signupwidget> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Have an account?"),
+                          const Text("Have an account?"),
                           TextButton(
                               onPressed: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Loginscreen()));
+                                        builder: (context) =>
+                                            const Loginscreen()));
                               },
-                              child: Text(
+                              child: const Text(
                                 "Log In",
                                 style: TextStyle(
                                     color: Color.fromARGB(255, 236, 106, 45)),

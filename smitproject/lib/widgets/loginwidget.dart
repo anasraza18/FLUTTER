@@ -19,25 +19,27 @@ class _LoginwidgetState extends State<Loginwidget> {
           Container(
             height: 200,
             width: double.infinity, // Responsive width
-            color: Color.fromARGB(255, 243, 205, 91),
-            padding: EdgeInsets.only(top: 0, left: 10), // Padding for safe area
+            color: const Color.fromARGB(255, 243, 205, 91),
+            padding: const EdgeInsets.only(
+                top: 0, left: 10), // Padding for safe area
             child: Row(
               children: [
                 IconButton(
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(Icons.arrow_back, color: Colors.white, size: 28),
+                  icon: const Icon(Icons.arrow_back,
+                      color: Colors.white, size: 28),
                 ),
-                Spacer(),
-                Text(
+                const Spacer(),
+                const Text(
                   "Log In",
                   style: TextStyle(
                       fontSize: 34,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
-                Spacer(),
+                const Spacer(),
               ],
             ),
           ),
@@ -49,7 +51,7 @@ class _LoginwidgetState extends State<Loginwidget> {
             right: 0,
             bottom: 0, // Ensures it fills the remaining space
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
@@ -60,7 +62,7 @@ class _LoginwidgetState extends State<Loginwidget> {
                 padding: const EdgeInsets.only(top: 20, right: 30, left: 35),
                 child: Column(
                   children: [
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           "Welcome",
@@ -69,10 +71,10 @@ class _LoginwidgetState extends State<Loginwidget> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n"
@@ -82,10 +84,10 @@ class _LoginwidgetState extends State<Loginwidget> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           "Email or Mobile Number",
@@ -94,7 +96,7 @@ class _LoginwidgetState extends State<Loginwidget> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
@@ -104,19 +106,20 @@ class _LoginwidgetState extends State<Loginwidget> {
                             BorderRadius.circular(20), // Rounded corners
                       ),
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Enter Email or Mobile Number",
                           border: InputBorder.none, // No border
                           contentPadding: EdgeInsets.symmetric(
                               vertical: 10, horizontal: 15), // Height adjust
                         ),
-                        style: TextStyle(fontSize: 16), // Text size adjust
+                        style:
+                            const TextStyle(fontSize: 16), // Text size adjust
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           "Password",
@@ -125,7 +128,7 @@ class _LoginwidgetState extends State<Loginwidget> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Container(
@@ -135,13 +138,14 @@ class _LoginwidgetState extends State<Loginwidget> {
                             BorderRadius.circular(20), // Rounded corners
                       ),
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintText: "Password",
                           border: InputBorder.none, // No border
                           contentPadding: EdgeInsets.symmetric(
                               vertical: 10, horizontal: 15), // Height adjust
                         ),
-                        style: TextStyle(fontSize: 16), // Text size adjust
+                        style:
+                            const TextStyle(fontSize: 16), // Text size adjust
                       ),
                     ),
                     Row(
@@ -149,7 +153,7 @@ class _LoginwidgetState extends State<Loginwidget> {
                       children: [
                         TextButton(
                             onPressed: () {},
-                            child: Text(
+                            child: const Text(
                               "Forget Password",
                               style: TextStyle(
                                 color: Color.fromARGB(255, 236, 106, 45),
@@ -157,28 +161,29 @@ class _LoginwidgetState extends State<Loginwidget> {
                             ))
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     SizedBox(
                       width: 150,
                       child: ElevatedButton(
                         onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromARGB(255, 236, 106, 45),
+                        ),
                         child: Text(
                           "Log In",
                           style: TextStyle(fontSize: 22, color: Colors.white),
                         ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromARGB(255, 236, 106, 45),
-                        ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [Text("or sign up with")],
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -196,21 +201,22 @@ class _LoginwidgetState extends State<Loginwidget> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Don't have an account?"),
+                        const Text("Don't have an account?"),
                         TextButton(
                             onPressed: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Signupscreen()));
+                                      builder: (context) =>
+                                          const Signupscreen()));
                             },
-                            child: Text(
+                            child: const Text(
                               "Sign Up",
                               style: TextStyle(
                                   color: Color.fromARGB(255, 236, 106, 45)),

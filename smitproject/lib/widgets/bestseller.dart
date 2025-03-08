@@ -16,7 +16,7 @@ class _BestsellerState extends State<Bestseller> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               "Best Seller",
               style: TextStyle(
                 color: Colors.black,
@@ -26,13 +26,13 @@ class _BestsellerState extends State<Bestseller> {
             ),
             TextButton.icon(
               onPressed: () {},
-              label: Text(
+              label: const Text(
                 "View All",
                 style: TextStyle(
                   color: Color.fromARGB(255, 236, 106, 45),
                 ),
               ),
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_left,
                 color: Color.fromARGB(255, 236, 106, 45),
               ),
@@ -56,7 +56,7 @@ class _BestsellerState extends State<Bestseller> {
                           width: 100,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
-                            color: Color.fromARGB(255, 243, 233, 202),
+                            color: const Color.fromARGB(255, 243, 233, 202),
                             image: DecorationImage(
                               image: AssetImage(bestsellerdata[index]['image']),
                               fit: BoxFit.cover,
@@ -71,7 +71,7 @@ class _BestsellerState extends State<Bestseller> {
                           child: Container(
                             // height: 60,
                             //width: 20,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 color: Color.fromARGB(255, 236, 106, 45),
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(20),
@@ -79,7 +79,7 @@ class _BestsellerState extends State<Bestseller> {
                             child: Center(
                                 child: Text(
                               "RS.${bestsellerdata[index]['price'].toString()}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
                               ),

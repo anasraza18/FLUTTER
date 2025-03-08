@@ -26,19 +26,20 @@ class _CatogorywidgetState extends State<Catogorywidget> {
                   width: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Color.fromARGB(255, 243, 233, 202),
+                    color: const Color.fromARGB(255, 243, 233, 202),
                   ),
                   child: IconButton(
                     onPressed: () {},
                     icon: Icon(
                       catogory[index]['icon'],
                       size: 40,
-                      color: Color.fromARGB(255, 236, 106, 45),
+                      color: const Color.fromARGB(255, 236, 106, 45),
                     ),
                   ),
                 ),
-                SizedBox(height: 5),
-                Text(catogory[index]['name'], style: TextStyle(fontSize: 16)),
+                const SizedBox(height: 5),
+                Text(catogory[index]['name'],
+                    style: const TextStyle(fontSize: 16)),
               ],
             ),
           );

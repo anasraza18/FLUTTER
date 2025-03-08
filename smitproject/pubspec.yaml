@@ -37,7 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   glow_bottom_app_bar: ^1.5.2
   lucide_icons: 0.257.0
-
+  carousel_slider: ^5.0.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
