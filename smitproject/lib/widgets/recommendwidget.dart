@@ -27,7 +27,7 @@ class _RecommendwidgetState extends State<Recommendwidget> {
               Text(
                 "Recommend",
                 style: TextStyle(
-                  fontSize: 26,
+                  fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
