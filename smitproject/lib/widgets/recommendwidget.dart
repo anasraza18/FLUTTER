@@ -9,6 +9,13 @@ class Recommendwidget extends StatefulWidget {
 }
 
 class _RecommendwidgetState extends State<Recommendwidget> {
+  List<bool> fav = [];
+  @override
+  void initState() {
+    super.initState();
+    fav = List.generate(recommenddata.length, (index) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -95,8 +102,15 @@ class _RecommendwidgetState extends State<Recommendwidget> {
                                 bottomRight: Radius.circular(20))),
                         child: Center(
                             child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(Icons.favorite_border))),
+                                onPressed: () {
+                                  setState(() {
+                                    fav[index] = !fav[index];
+                                  });
+                                },
+                                icon: Icon(
+                                  Icons.favorite,
+                                  color: fav[index] ? Colors.red : Colors.black,
+                                ))),
                       ),
                     ),
                     Positioned(
