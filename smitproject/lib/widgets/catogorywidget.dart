@@ -12,7 +12,7 @@ class _CatogorywidgetState extends State<Catogorywidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 130,
+      height: 90,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: catogory.length,
@@ -22,8 +22,8 @@ class _CatogorywidgetState extends State<Catogorywidget> {
             child: Column(
               children: [
                 Container(
-                  height: 70,
-                  width: 60,
+                  height: 50,
+                  width: 45,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
                     color: const Color.fromARGB(255, 243, 233, 202),
@@ -32,7 +32,7 @@ class _CatogorywidgetState extends State<Catogorywidget> {
                     onPressed: () {},
                     icon: Icon(
                       catogory[index]['icon'],
-                      size: 40,
+                      size: 35,
                       color: const Color.fromARGB(255, 236, 106, 45),
                     ),
                   ),

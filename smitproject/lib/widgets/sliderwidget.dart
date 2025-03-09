@@ -12,7 +12,7 @@ class Sliderwidget extends StatelessWidget {
       child: Center(
         child: CarouselSlider(
           options: CarouselOptions(
-            height: 150.0,
+            height: 110.0,
             autoPlay: true,
             enlargeCenterPage: true,
             //aspectRatio: 16 / 9,

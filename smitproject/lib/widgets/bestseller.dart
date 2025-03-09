@@ -20,7 +20,7 @@ class _BestsellerState extends State<Bestseller> {
               "Best Seller",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 26,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -40,7 +40,7 @@ class _BestsellerState extends State<Bestseller> {
           ],
         ),
         SizedBox(
-          height: 150,
+          height: 110,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: bestsellerdata.length,
@@ -52,10 +52,10 @@ class _BestsellerState extends State<Bestseller> {
                     Stack(
                       children: [
                         Container(
-                          height: 150,
-                          width: 100,
+                          height: 110,
+                          width: 65,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
+                            borderRadius: BorderRadius.circular(20),
                             color: const Color.fromARGB(255, 243, 233, 202),
                             image: DecorationImage(
                               image: AssetImage(bestsellerdata[index]['image']),
@@ -64,8 +64,8 @@ class _BestsellerState extends State<Bestseller> {
                           ),
                         ),
                         Positioned(
-                          top: 108, // Move slightly up to overlap
-                          left: 30,
+                          top: 70, // Move slightly up to overlap
+                          left: 20,
                           right: 0,
                           bottom: 20,
                           child: Container(
@@ -81,7 +81,7 @@ class _BestsellerState extends State<Bestseller> {
                               "RS.${bestsellerdata[index]['price'].toString()}",
                               style: const TextStyle(
                                 color: Colors.white,
-                                fontSize: 18,
+                                fontSize: 12,
                               ),
                             )),
                           ),
