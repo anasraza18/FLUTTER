@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smitproject/data/bestsellerdata.dart';
 import 'package:smitproject/data/recommenddata.dart';
 
 class Recommendwidget extends StatefulWidget {
